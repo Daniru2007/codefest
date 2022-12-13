@@ -1,1 +1,1 @@
-Frontend part of the site
+frontend of the website
