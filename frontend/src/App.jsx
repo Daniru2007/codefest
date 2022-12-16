@@ -3,6 +3,9 @@ import classNames from "classnames";
 import { BsFillMoonFill } from "react-icons/bs";
 import { BsFillSunFill } from "react-icons/bs";
 
+import ToggleButton from "./components/ToggleButton";
+import SVGBlob from "./components/SVGBlob";
+
 import "./style/App.css";
 import "./style/library.css";
 
@@ -18,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="link">Hi there I'm a link</h1>
+      <SVGBlob />
       <h1 className={`${theme}`}>Hello World!</h1>
       <button onClick={() => updateDarkTheme(!darkTheme)}>{themeIcon}</button>
     </div>
