@@ -1,0 +1,82 @@
+:root {
+  --bg-color: #1a1d22;
+  --font-color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--font-color);
+}
+.App {
+  height: 100vh;
+  transition: all 0.5s;
+}
+.App.dark {
+  background-color: var(--bg-color);
+}
+.App.light {
+  background-color: var(--font-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border-radius: 100%;
+  margin: 15px;
+}
+
+.navbar_links {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__links__item {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+  margin-top: 30px;
+}
+.navbar__links__item > * {
+  color: white;
+  text-decoration: none;
+  opacity: 100%;
+  transition: all 0.5s;
+}
+
+.navbar__links__item:hover > * {
+  opacity: 70%;
+}
+
+.navbar__right {
+  display: flex;
+  direction: row;
+}
+
+.navbar__right__user {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 15px;
+}
+
+.navbar_user > * {
+  background-color: black;
+}
+
+.switch {
+  margin: 15px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
