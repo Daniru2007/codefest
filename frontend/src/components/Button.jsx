@@ -1,7 +1,9 @@
+import classNames from "classnames";
 import React from "react";
 import { useState, useEffect } from "react";
 
-function Button({ children, theme }) {
+function Button({ children, theme, borderless = false, onClick = () => {} }) {
+  const border = classNames({ borderless: borderless });
   const [isRipple, setIsRipple] = useState(false);
   const [coords, setCoords] = useState({ x: -1, y: -1 });
 
@@ -26,7 +28,7 @@ function Button({ children, theme }) {
     });
   };
   return (
-    <button onClick={handleClick} className={`button ${theme}`}>
+    <button onClick={handleClick} className={`button ${border} ${theme}`}>
       {isRipple ? (
         <span
           className="button__ripple"

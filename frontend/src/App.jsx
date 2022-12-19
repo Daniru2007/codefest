@@ -63,7 +63,12 @@ function App() {
               <h1 style={{ color: "#39B8C9" }}>E-Learning </h1>
               <h1>Website</h1>
             </div>
-            <Button theme={theme}>Hi</Button>
+            <div className={`main__head__buttons`}>
+              <Button theme={theme}>Login</Button>
+              <Button theme={theme} borderless={true}>
+                Sign Up
+              </Button>
+            </div>
           </div>
         </section>
       </Router>

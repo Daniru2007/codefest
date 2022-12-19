@@ -102,16 +102,38 @@ input:checked + .slider {
   outline: none;
   border: none;
   overflow: hidden;
+  transition: 0.5s;
 }
 
 .button > * {
   color: #1a1d22;
+  font-size: 18px;
   transition: 0.5s;
   z-index: 2;
 }
 
 .button.light > * {
   color: white;
+}
+
+.button.borderless {
+  background-color: #00000000;
+  border: #00c2ff 2px solid;
+  transition: 0.5s;
+}
+
+.button.borderless > * {
+  color: white;
+  transition: 0.5s;
+}
+
+.button.borderless.light {
+  background-color: #00000000;
+  border: #0081a8 2px solid;
+}
+
+.button.borderless.light > * {
+  color: #1a1d22;
 }
 
 .button__ripple {
