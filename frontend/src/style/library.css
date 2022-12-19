@@ -1,3 +1,7 @@
+:root {
+  --bg-color: #1a1d22;
+  --font-color: white;
+}
 * {
   padding: 0%;
   margin: 0%;
@@ -87,4 +91,53 @@
 }
 input:checked + .slider {
   background-color: #032e52;
+}
+
+.button {
+  position: relative;
+  background-color: #00c2ff;
+  padding: 12px 36px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+
+.button > * {
+  color: #1a1d22;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.button.light > * {
+  color: white;
+}
+
+.button__ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  animation: ripple-effect ease 1s forwards;
+}
+
+@keyframes ripple-effect {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 100%;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0%;
+  }
+}
+
+.button__content {
+  pointer-events: none;
+  z-index: 2;
 }

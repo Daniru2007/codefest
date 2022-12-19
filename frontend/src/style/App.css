@@ -9,19 +9,26 @@
   color: var(--font-color);
 }
 .App {
-  height: 100vh;
+  /* height: 100vh; */
   transition: all 0.5s;
 }
 .App.dark {
   background-color: var(--bg-color);
 }
 .App.light {
-  background-color: var(--font-color);
+  background-color: rgb(211, 211, 211);
 }
 
 .navbar {
   display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: #1a1d2293;
+  backdrop-filter: blur(20px);
   justify-content: space-between;
+}
+.navbar.light {
+  background-color: rgba(211, 211, 211, 0.7);
 }
 
 .navbar__logo {
@@ -42,6 +49,10 @@
   display: inline-block;
   margin: 15px;
   margin-top: 30px;
+}
+
+.navbar__links__item.light > * {
+  color: var(--bg-color);
 }
 .navbar__links__item > * {
   color: white;
@@ -79,4 +90,26 @@
   margin: 15px;
   margin-right: 50px;
   margin-top: 20px;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  grid-column: auto auto;
+}
+
+.main__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__head__heading > h1 {
+  display: inline;
+  font-size: 60px;
+}
+
+.main__head__heading.light > h1 {
+  color: #1a1d22;
 }
