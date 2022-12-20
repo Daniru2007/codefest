@@ -12,6 +12,7 @@ import SVGBlob from "./components/SVGBlob";
 import "./style/App.css";
 import "./style/library.css";
 import React from "react";
+import HomeSVG from "./components/HomeSVG";
 
 function App() {
   // change theme
@@ -57,18 +58,26 @@ function App() {
           </div>
         </nav>
         <section className="main">
+          <SVGBlob className="main__backsvg" />
           <div className="main__head">
             <div className={`main__head__heading ${theme}`}>
               <h1>The Best </h1>
               <h1 style={{ color: "#39B8C9" }}>E-Learning </h1>
               <h1>Website</h1>
             </div>
+            <p className={`main__head__para ${theme}`}>
+              Do your best in studies. Join us!
+            </p>
             <div className={`main__head__buttons`}>
               <Button theme={theme}>Login</Button>
               <Button theme={theme} borderless={true}>
                 Sign Up
               </Button>
             </div>
+          </div>
+          <div className="main__img">
+            <div className="main__img__back"></div>
+            <HomeSVG />
           </div>
         </section>
       </Router>

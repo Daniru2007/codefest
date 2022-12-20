@@ -36,12 +36,13 @@
 
 .svg-blob {
   position: absolute;
-  z-index: -10;
+  z-index: 1;
 }
 
 .svg-blob > * {
   position: absolute;
   width: 500px;
+  z-index: 1;
 }
 
 #svgGlow {
@@ -107,7 +108,7 @@ input:checked + .slider {
 
 .button > * {
   color: #1a1d22;
-  font-size: 18px;
+  font-size: 17px;
   transition: 0.5s;
   z-index: 2;
 }
@@ -162,4 +163,8 @@ input:checked + .slider {
 .button__content {
   pointer-events: none;
   z-index: 2;
+}
+
+.homeSVG {
+  margin-top: 100px;
 }

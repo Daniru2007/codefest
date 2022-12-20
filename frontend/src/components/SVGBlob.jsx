@@ -3,14 +3,14 @@ import classNames from "classnames";
 
 import "../style/library.css";
 
-function SVGBlob() {
+function SVGBlob({ className }) {
   return (
-    <div className="svg-blob">
+    <div className={`svg-blob ${className}`}>
       <svg
         viewBox="0 0 800 500"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="100%"
         id="blobSvg"
       >
@@ -27,7 +27,7 @@ function SVGBlob() {
               ></stop>
             </linearGradient>
           </defs>
-          <path className="blob" fill="url(#gradient)">
+          <path className="blob" fill="#00C2FF">
             <animate
               attributeName="d"
               dur={"25000ms"}
@@ -55,7 +55,7 @@ function SVGBlob() {
         viewBox="0 0 800 500"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
         width="100%"
         id="svgGlow"
       >
@@ -72,7 +72,7 @@ function SVGBlob() {
               ></stop>
             </linearGradient>
           </defs>
-          <path className="blob" fill="url(#gradient)">
+          <path className="blob" fill="#00C2FF">
             <animate
               attributeName="d"
               dur={"25000ms"}

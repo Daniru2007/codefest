@@ -26,6 +26,7 @@
   background-color: #1a1d2293;
   backdrop-filter: blur(20px);
   justify-content: space-between;
+  z-index: 100;
 }
 .navbar.light {
   background-color: rgba(211, 211, 211, 0.7);
@@ -93,23 +94,43 @@
 }
 
 .main {
+  position: relative;
   height: 100vh;
-  display: grid;
-  grid-column: auto auto;
+  display: flex;
+  overflow: hidden;
 }
 
 .main__head {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-top: 150px;
 }
 
 .main__head__heading > h1 {
   display: inline;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .main__head__heading.light > h1 {
   color: #1a1d22;
+}
+
+.main__head__para {
+  color: rgb(168, 168, 168);
+}
+
+.main__backsvg {
+  bottom: 300px;
+  left: -500px;
+}
+
+.main__backsvg > * {
+  width: 1500px;
+}
+
+.main__img {
+  position: relative;
 }
