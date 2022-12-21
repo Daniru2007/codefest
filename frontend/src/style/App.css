@@ -107,6 +107,7 @@
   justify-content: flex-start;
   margin-left: 40px;
   margin-top: 150px;
+  z-index: 2;
 }
 
 .main__head__heading > h1 {
@@ -125,6 +126,7 @@
 .main__backsvg {
   bottom: 300px;
   left: -500px;
+  z-index: 1;
 }
 
 .main__backsvg > * {
@@ -132,7 +134,34 @@
 }
 
 .main__img {
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 100px;
+}
+
+@media only screen and (max-width: 790px) {
+  .main__img {
+    width: 0px;
+    height: 0px;
+    opacity: 0%;
+    display: none;
+  }
+  .main__head {
+    justify-content: center;
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .main__head__heading > h1 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .main__head__heading > h1 {
+    font-size: 30px;
+  }
 }

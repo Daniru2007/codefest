@@ -62,7 +62,7 @@ function App() {
           <div className="main__head">
             <div className={`main__head__heading ${theme}`}>
               <h1>The Best </h1>
-              <h1 style={{ color: "#39B8C9" }}>E-Learning </h1>
+              <h1 style={{ color: "#0081a8" }}>E-Learning </h1>
               <h1>Website</h1>
             </div>
             <p className={`main__head__para ${theme}`}>

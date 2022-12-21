@@ -27,7 +27,7 @@ function SVGBlob({ className }) {
               ></stop>
             </linearGradient>
           </defs>
-          <path className="blob" fill="#00C2FF">
+          <path className="blob" fill="url(#gradient)">
             <animate
               attributeName="d"
               dur={"25000ms"}
@@ -72,7 +72,7 @@ function SVGBlob({ className }) {
               ></stop>
             </linearGradient>
           </defs>
-          <path className="blob" fill="#00C2FF">
+          <path className="blob" fill="url(#gradient)">
             <animate
               attributeName="d"
               dur={"25000ms"}

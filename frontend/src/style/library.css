@@ -96,7 +96,7 @@ input:checked + .slider {
 
 .button {
   position: relative;
-  background-color: #00c2ff;
+  background-color: #0081a8;
   padding: 12px 36px;
   margin: 10px;
   cursor: pointer;
@@ -108,6 +108,7 @@ input:checked + .slider {
 
 .button > * {
   color: #1a1d22;
+  color: white;
   font-size: 17px;
   transition: 0.5s;
   z-index: 2;
@@ -119,7 +120,7 @@ input:checked + .slider {
 
 .button.borderless {
   background-color: #00000000;
-  border: #00c2ff 2px solid;
+  border: #0081a8 2px solid;
   transition: 0.5s;
 }
 
@@ -167,4 +168,9 @@ input:checked + .slider {
 
 .homeSVG {
   margin-top: 100px;
+  position: relative;
+}
+
+.homeSVG > * {
+  width: 45vw;
 }
