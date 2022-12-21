@@ -76,7 +76,6 @@ function App() {
             </div>
           </div>
           <div className="main__img">
-            <div className="main__img__back"></div>
             <HomeSVG />
           </div>
         </section>
