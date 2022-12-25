@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import "./App.css";
-import Navbar from "./components/Utils/Navbar";
 import InvertCursor from "./components/Utils/InvertCursor";
 import HomePage from "./components/HomePage/HomePage";
 
@@ -9,7 +10,12 @@ function App() {
   return (
     <div className="App">
       <InvertCursor onCursorLink={onLink} />
-      <HomePage setOnLink={setOnLink} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage setOnLink={setOnLink} />} />
+          <Route path="/home" element={<HomePage setOnLink={setOnLink} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
