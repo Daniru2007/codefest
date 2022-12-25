@@ -1,6 +1,14 @@
 .home-display {
+  color: white;
   background-color: rgb(27, 27, 27);
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-display__contents {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +33,21 @@
   width: 500px;
   padding: 15px;
   margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(49, 49, 49);
-  background-image: url(../../assets/time.jpg);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
   border-radius: 10px;
+}
+
+.time {
+  background-image: url(../../assets/time.jpg);
+}
+.study {
+  background-image: url(../../assets/study.jpg);
 }

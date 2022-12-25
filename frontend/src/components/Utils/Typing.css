@@ -7,7 +7,7 @@
 
 .typewriter::after {
   content: "|";
-  animation: cursor-ani 0.5s linear infinite alternate;
+  color: rgb(172, 172, 172);
 }
 .typewriter.move::after {
   content: "|";
@@ -32,10 +32,5 @@
 @media only screen and (max-width: 550px) {
   .typewriter {
     font-size: 40px;
-  }
-
-  .typewriter::after {
-    content: "|";
-    animation: none;
   }
 }

@@ -4,6 +4,12 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s;
+}
+
+.navbar.scrolled {
+  background-color: rgba(25, 25, 26, 0.527);
+  backdrop-filter: blur(50px);
 }
 
 .logo {

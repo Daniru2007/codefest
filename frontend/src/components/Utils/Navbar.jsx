@@ -4,6 +4,7 @@ import "./Navbar.css";
 
 function Navbar({ setCursorOnLinks }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const cursor = {
     onMouseEnter: () => setCursorOnLinks(true),
     onMouseLeave: () => setCursorOnLinks(false),
@@ -16,8 +17,23 @@ function Navbar({ setCursorOnLinks }) {
     { "About Us": "aboutus" },
   ];
 
+  window.onscroll = () => {
+    scrollFunc();
+  };
+
+  const scrollFunc = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      setIsScrolling(true);
+    } else {
+      setIsScrolling(false);
+    }
+  };
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolling ? "scrolled" : ""}`}>
       <div>
         <div className="logo"></div>
       </div>
