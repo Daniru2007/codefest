@@ -1,0 +1,35 @@
+.home-display {
+  background-color: rgb(27, 27, 27);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-display__content > * {
+  color: white;
+}
+
+.home-display__content > p {
+  transform: scaleY(0);
+  opacity: 0%;
+  transition: all 0.5s;
+  transform-origin: top;
+}
+.home-display__content:hover > p {
+  opacity: 100%;
+  transform: scaleY(1);
+}
+
+.home-display__content {
+  width: 500px;
+  padding: 15px;
+  margin: 30px;
+  background-color: rgb(49, 49, 49);
+  background-image: url(../../assets/time.jpg);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  border-radius: 10px;
+}

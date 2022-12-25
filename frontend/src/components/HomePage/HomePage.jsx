@@ -2,12 +2,14 @@ import React from "react";
 import "./HomePage.css";
 import HomeMain from "./HomeMain";
 import Navbar from "../Utils/Navbar";
+import HomeDisplay from "./HomeDisplay";
 
 function HomePage({ setOnLink }) {
   return (
     <div className="home-page">
       <Navbar setCursorOnLinks={setOnLink} />
-      <HomeMain />
+      <HomeMain setCursorOnLinks={setOnLink} />
+      <HomeDisplay setCursorOnLinks={setOnLink} />
     </div>
   );
 }

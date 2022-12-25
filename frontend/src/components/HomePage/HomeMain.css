@@ -1,18 +1,31 @@
 .home-main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 90vh;
-    background-image: url("../../assets/laptop.jpg");
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 90vh;
+  background-image: url("../../assets/laptop.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
 }
 
 .home-main__para {
-    color: rgb(189, 189, 189);
-    margin-left: 30px;
-    margin-right: 30px;
-    max-width: 555px;
+  color: rgb(189, 189, 189);
+  margin-left: 30px;
+  margin-right: 30px;
+  max-width: 555px;
+}
+
+.home-main__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.link__icon {
+  margin: 3px 5px;
+  margin-bottom: 0px;
 }
