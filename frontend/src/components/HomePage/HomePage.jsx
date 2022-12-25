@@ -7,9 +7,9 @@ import HomeDisplay from "./HomeDisplay";
 function HomePage({ setOnLink }) {
   return (
     <div className="home-page">
-      <Navbar setCursorOnLinks={setOnLink} />
-      <HomeMain setCursorOnLinks={setOnLink} />
-      <HomeDisplay setCursorOnLinks={setOnLink} />
+      <Navbar />
+      <HomeMain />
+      <HomeDisplay />
     </div>
   );
 }

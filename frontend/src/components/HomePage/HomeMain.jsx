@@ -4,11 +4,7 @@ import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 import Typing from "../Utils/Typing";
 import "./HomeMain.css";
 
-function HomeMain({ setCursorOnLinks }) {
-  const cursor = {
-    onMouseEnter: () => setCursorOnLinks(true),
-    onMouseLeave: () => setCursorOnLinks(false),
-  };
+function HomeMain() {
   return (
     <div className="home-main">
       <Typing
@@ -19,7 +15,7 @@ function HomeMain({ setCursorOnLinks }) {
         range of educational materials and resources to help you learn and grow.
         We hope you enjoy your time on our e-learning website!
       </p>
-      <Link to={"login"} className="link home-main__link" {...cursor}>
+      <Link to={"login"} className="link home-main__link">
         <h3>Let's Connect</h3>
         <BsFillArrowRightCircleFill className="link__icon" />
       </Link>

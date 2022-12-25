@@ -2,13 +2,9 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar({ setCursorOnLinks }) {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
-  const cursor = {
-    onMouseEnter: () => setCursorOnLinks(true),
-    onMouseLeave: () => setCursorOnLinks(false),
-  };
 
   const links = [
     { Home: "home" },
@@ -41,12 +37,7 @@ function Navbar({ setCursorOnLinks }) {
         {links.map((link) => {
           const [key, val] = Object.entries(link)[0];
           return (
-            <Link
-              className="navbar__links__item"
-              to={`/${val}`}
-              key={val}
-              {...cursor}
-            >
+            <Link className="navbar__links__item" to={`/${val}`} key={val}>
               {key}
             </Link>
           );
@@ -59,7 +50,6 @@ function Navbar({ setCursorOnLinks }) {
           <div
             className={`menu-icon ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
-            {...cursor}
           >
             <span className="menu-ani ani1"></span>
             <span className="menu-ani ani2"></span>

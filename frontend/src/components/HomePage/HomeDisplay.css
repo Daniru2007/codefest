@@ -15,6 +15,7 @@
 }
 
 .home-display__content > * {
+  user-select: none;
   color: white;
 }
 
@@ -23,13 +24,16 @@
   opacity: 0%;
   transition: all 0.5s;
   transform-origin: top;
+  user-select: none;
 }
+
 .home-display__content:hover > p {
   opacity: 100%;
   transform: scaleY(1);
 }
 
 .home-display__content {
+  cursor: pointer;
   width: 500px;
   padding: 15px;
   margin: 30px;
