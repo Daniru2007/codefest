@@ -1,0 +1,11 @@
+.cursor {
+    position: fixed;
+    mix-blend-mode: exclusion;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 50%;
+    transition: transform 350ms ease;
+}

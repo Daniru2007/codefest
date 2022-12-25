@@ -1,0 +1,41 @@
+.typewriter {
+  color: white;
+  display: block;
+  font-size: 80px;
+  margin-left: 30px;
+}
+
+.typewriter::after {
+  content: "|";
+  animation: cursor-ani 0.5s linear infinite alternate;
+}
+.typewriter.move::after {
+  content: "|";
+  animation: none;
+}
+
+@keyframes cursor-ani {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .typewriter {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .typewriter {
+    font-size: 40px;
+  }
+
+  .typewriter::after {
+    content: "|";
+    animation: none;
+  }
+}
