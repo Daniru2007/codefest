@@ -35,6 +35,7 @@
 .home-display__content {
   cursor: pointer;
   width: 500px;
+  height: 20rem;
   padding: 15px;
   margin: 30px;
   display: flex;
