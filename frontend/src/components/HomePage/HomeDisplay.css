@@ -1,7 +1,7 @@
 .home-display {
   color: white;
   background-color: rgb(27, 27, 27);
-  height: 100vh;
+  height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,50 +9,93 @@
 }
 
 .home-display__contents {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-display__content > * {
-  user-select: none;
-  color: white;
-}
-
-.home-display__content > p {
-  transform: scaleY(0);
-  opacity: 0%;
-  transition: all 0.5s;
-  transform-origin: top;
-  user-select: none;
-}
-
-.home-display__content:hover > p {
-  opacity: 100%;
-  transform: scaleY(1);
-}
-
-.home-display__content {
-  cursor: pointer;
-  width: 500px;
-  height: 20rem;
-  padding: 15px;
-  margin: 30px;
+  background-color: rgb(70, 70, 70);
+  height: max-content;
+  width: max-content;
+  margin-top: -40px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: rgb(49, 49, 49);
-  background-blend-mode: overlay;
+  justify-content: center;
+}
+
+.home-display__contents > * {
+  margin: 15px;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: rgb(27, 27, 27);
+  overflow: hidden;
+  margin: 10px;
+}
+
+.description {
+  margin-left: 15px;
+}
+.description > p {
+  margin-right: 10px;
+}
+
+.img__back {
+  width: 500px;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  border-radius: 10px;
 }
 
-.time {
+.study > .img__back {
+  background-position: center;
+  background-image: url(../../assets/study.jpg);
+}
+
+.time > .img__back {
+  background-position: center;
   background-image: url(../../assets/time.jpg);
 }
-.study {
-  background-image: url(../../assets/study.jpg);
+
+@media only screen and (max-width: 920px) {
+  .contents {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .content {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .content {
+    width: 320px;
+  }
+
+  .home-display__contents {
+    margin-top: 0px;
+    width: 100%;
+    border-radius: 0%;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .content {
+    width: 250px;
+  }
+  .description > h2 {
+    font-size: 18px;
+  }
 }
