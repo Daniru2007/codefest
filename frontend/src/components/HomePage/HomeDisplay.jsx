@@ -40,7 +40,7 @@ function HomeDisplay({ setCursorOnLinks }) {
           width="844.67538"
           height="595.26155"
           viewBox="0 0 844.67538 595.26155"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
         >
           <circle cx="431.39281" cy="548" r="46" fill="#6c63ff" />
           <path
