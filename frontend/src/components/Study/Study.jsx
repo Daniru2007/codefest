@@ -1,5 +1,12 @@
+import "./Study.css";
+
 function Study() {
-  return <div>Study</div>;
+  // TODO (TiraWeb & @faahir): html code comes after the return statement
+  return (
+    <div>
+      <h1>Study</h1>
+    </div>
+  );
 }
 
 export default Study;

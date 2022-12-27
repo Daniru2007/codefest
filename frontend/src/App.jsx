@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
 import Study from "./components/Study/Study";
 import TimeManagement from "./components/TimeManagement/TimeManagement";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/study" element={<Study />} />
           <Route path="/time" element={<TimeManagement />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </Router>
     </div>

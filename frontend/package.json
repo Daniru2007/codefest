@@ -14,7 +14,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.0",
-    "react-tilty": "^2.0.3"
+    "react-tilty": "^2.0.3",
+    "recharts": "^2.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
