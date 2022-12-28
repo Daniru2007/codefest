@@ -6,17 +6,21 @@ import HomePage from "./components/HomePage/HomePage";
 import Study from "./components/Study/Study";
 import TimeManagement from "./components/TimeManagement/TimeManagement";
 import AboutUs from "./components/AboutUs/AboutUs";
+import TimeProject from "./components/TimeManagement/TimeProject";
 
 function App() {
+  // Setting Up the routes
   return (
     <div className="App">
       <Router>
-        <Routes>
+        <Routes mode="absolute">
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/study" element={<Study />} />
-          <Route path="/time" element={<TimeManagement />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/time" element={<TimeManagement />} />
+          <Route path="time/project" element={<TimeProject />} />
+          <Route path="time/project/:id" element={<TimeProject />} />
         </Routes>
       </Router>
     </div>

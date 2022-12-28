@@ -6,6 +6,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
 
+  // links on the navbar
   const links = [
     { Home: "home" },
     { Study: "study" },
@@ -17,6 +18,7 @@ function Navbar() {
     scrollFunc();
   };
 
+  // add blur effect for the navbar when start scrolling
   const scrollFunc = () => {
     if (
       document.body.scrollTop > 80 ||
