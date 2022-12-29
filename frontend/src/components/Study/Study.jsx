@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Study.css";
 
 function Study() {
