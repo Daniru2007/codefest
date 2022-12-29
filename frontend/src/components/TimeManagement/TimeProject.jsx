@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./TimeProject.css";
 
 function TimeProject() {
+  const [data, setData] = useState({});
   const [projectInfo, setProjectInfo] = useState({
     days: 0,
     time: [0, 0],
@@ -13,7 +14,50 @@ function TimeProject() {
     ],
   });
 
-  const onSubjectChange = (e) => {
+  const onSubjectNameChange = (e) => {
+    let id = parseInt(e.target.id);
+    const subjects = projectInfo["subjects"];
+    subjects[id] = { name: `${e.target.value}`, val: subjects[id]["val"] };
+    setProjectInfo({
+      ...projectInfo,
+      subjects: [...subjects],
+    });
+  };
+
+  const addSubjects = (e) => {
+    let subjects = projectInfo["subjects"];
+    subjects.push({ name: "new subject", val: 0 });
+    setProjectInfo({
+      ...projectInfo,
+      subjects: [...subjects],
+    });
+  };
+
+  const saveData = (e) => {
+    fetch("http://localhost:3000/users")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("http://localhost:3000/users")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const onSubjectValueChange = (e) => {
     let parsedVal = parseInt(e.target.value ? e.target.value : "0");
     let id = parseInt(e.target.id);
     const subjects = projectInfo["subjects"];
@@ -83,19 +127,27 @@ function TimeProject() {
         />
       </label>
       <br />
+      <br />
+      difficulty
+      <br />
       {projectInfo["subjects"].map((subject) => {
         const key = projectInfo.subjects.indexOf(subject);
         return (
           <div className="subject" key={key}>
             <label>
-              {subject.name}
+              <input
+                type="text"
+                value={subject.name}
+                id={key}
+                onChange={onSubjectNameChange}
+              />
               <input
                 type="range"
                 id={key}
                 value={subject.val}
                 min={0}
                 max={100}
-                onChange={onSubjectChange}
+                onChange={onSubjectValueChange}
               />
               {subject.val}%
             </label>
@@ -103,7 +155,8 @@ function TimeProject() {
           </div>
         );
       })}
-      <button>Add</button>
+      <button onClick={addSubjects}>Add +</button>
+      <button onClick={saveData}>Save</button>
     </div>
   );
 }

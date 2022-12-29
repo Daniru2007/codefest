@@ -8,9 +8,8 @@ function TimeManagement() {
 
   // reading the database
   const fetchJson = () => {
-    fetch("database/users.json")
+    fetch("http://localhost:3000/users")
       .then((response) => {
-        console.log(response);
         return response.json();
       })
       .then((data) => {

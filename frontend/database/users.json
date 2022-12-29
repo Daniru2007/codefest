@@ -1,0 +1,33 @@
+{
+    "users": {
+        "0001": {
+            "name": "test",
+            "password": "password123",
+            "projects": {
+                "days": 0,
+                "time": [
+                    0,
+                    0
+                ],
+                "subjects": [
+                    {
+                        "name": "science",
+                        "val": 90
+                    },
+                    {
+                        "name": "maths",
+                        "val": 60
+                    },
+                    {
+                        "name": "sinhala",
+                        "val": 80
+                    },
+                    {
+                        "name": "history",
+                        "val": 40
+                    }
+                ]
+            }
+        }
+    }
+}
