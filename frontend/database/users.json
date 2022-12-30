@@ -1,33 +1,42 @@
 {
-    "users": {
-        "0001": {
-            "name": "test",
-            "password": "password123",
-            "projects": {
-                "days": 0,
-                "time": [
-                    0,
-                    0
-                ],
-                "subjects": [
-                    {
-                        "name": "science",
-                        "val": 90
-                    },
-                    {
-                        "name": "maths",
-                        "val": 60
-                    },
-                    {
-                        "name": "sinhala",
-                        "val": 80
-                    },
-                    {
-                        "name": "history",
-                        "val": 40
-                    }
-                ]
+  "users": [
+    {
+      "id": 1,
+      "name": "test",
+      "password": "password123",
+      "projects": [
+        {
+          "name": "most hated thing",
+          "days": "7",
+          "time": [
+            "2",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "science",
+              "val": 75
+            },
+            {
+              "name": "maths",
+              "val": 40
+            },
+            {
+              "name": "sinhala",
+              "val": 50
+            },
+            {
+              "name": "history",
+              "val": 65
+            },
+            {
+              "name": "drama",
+              "val": 20
             }
+          ],
+          "id": 1
         }
+      ]
     }
+  ]
 }

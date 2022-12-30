@@ -2,13 +2,13 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function TimeManagement() {
-  const userId = "0001";
+  const userId = 1;
   // store the data
   const [data, setData] = useState({});
 
   // reading the database
   const fetchJson = () => {
-    fetch("http://localhost:3000/users")
+    fetch(`http://localhost:3000/users/${userId}`)
       .then((response) => {
         return response.json();
       })
@@ -20,7 +20,7 @@ function TimeManagement() {
       });
   };
   useLayoutEffect(() => {
-    fetchJson();
+    fetchJson(`http://localhost:3000/users/${userId}`);
   }, []);
   useEffect(() => {
     const timeout = setInterval(() => {
@@ -31,6 +31,13 @@ function TimeManagement() {
   return (
     <div className="time">
       <Link to={`./project/`}>Add</Link>
+      {data?.["projects"]?.map((project) => {
+        return (
+          <Link to={`./project/${project.id}`} key={project.id}>
+            <h1>{project.name}</h1>
+          </Link>
+        );
+      })}
     </div>
   );
 }

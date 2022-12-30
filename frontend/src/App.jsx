@@ -7,6 +7,7 @@ import Study from "./components/Study/Study";
 import TimeManagement from "./components/TimeManagement/TimeManagement";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TimeProject from "./components/TimeManagement/TimeProject";
+import TimeProjectItem from "./components/TimeManagement/TimeProjectItem";
 
 function App() {
   // Setting Up the routes
@@ -20,7 +21,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/time" element={<TimeManagement />} />
           <Route path="time/project" element={<TimeProject />} />
-          <Route path="time/project/:id" element={<TimeProject />} />
+          <Route path="time/project/:id" element={<TimeProjectItem />} />
         </Routes>
       </Router>
     </div>

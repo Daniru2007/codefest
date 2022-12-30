@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TimeProject.css";
 
 function TimeProject() {
+  let navigate = useNavigate();
+  const userId = 1;
   const [data, setData] = useState({});
   const [projectInfo, setProjectInfo] = useState({
+    name: "exam",
     days: 0,
     time: [0, 0],
     subjects: [
@@ -24,6 +28,13 @@ function TimeProject() {
     });
   };
 
+  const onNameChange = (e) => {
+    setProjectInfo({
+      ...projectInfo,
+      name: e.target.value,
+    });
+  };
+
   const addSubjects = (e) => {
     let subjects = projectInfo["subjects"];
     subjects.push({ name: "new subject", val: 0 });
@@ -34,23 +45,35 @@ function TimeProject() {
   };
 
   const saveData = (e) => {
-    fetch("http://localhost:3000/users")
+    fetch(`http://localhost:3000/users/${userId}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setData(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        let projects = data["projects"];
+        let len = data["projects"].length + 1;
+        let project = { ...projectInfo };
+        project["id"] = Number(len);
+        projects.push({ ...project });
 
-    fetch("http://localhost:3000/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
+        fetch(`http://localhost:3000/users/${userId}`, {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            navigate(`./${data["projects"].slice(-1)[0].id}`);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -94,6 +117,17 @@ function TimeProject() {
   };
   return (
     <div>
+      <label>
+        Name{" "}
+        <input
+          type="text"
+          value={projectInfo["name"]}
+          id="name"
+          max={366}
+          onChange={onNameChange}
+        />
+      </label>
+      <br />
       <label>
         How many days?{" "}
         <input
