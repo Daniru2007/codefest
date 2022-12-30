@@ -74,41 +74,42 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <title>register</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords"
-        content="Login Form" />
-    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lol.css" type="text/css" media="all" />
 </head>
 <body>
-    <section class="w3l-mockup-form">
-        <div class="container">
-            <div class="workinghny-form-grid">
-                <div class="main-mockup">
-                    <div class="">
-                        <span class=""></span>
-                    </div>
-                    <div class="w3l_form align-self">
-                        <div class="left_grid_info">
-                            <img src="2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="content-wthree">
+<div class="login-box">
                         <h2>Register Now</h2>
                         <p>Register with us its only taking 2 - 3 min to register </p>
                         <?php echo $msg; ?>
                         <form action="" method="post">
-                            <input type="text" class="name" name="name" placeholder="Enter Your Name" value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
-                            <input type="email" class="email" name="email" placeholder="Enter Your Email" value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
-                            <input type="password" class="password" name="password" placeholder="Enter Your Password" required>
-                            <input type="password" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
-                            <button name="submit" class="btn" type="submit">Register</button>
+                        <div class="user-box">
+                            <input type="text" class="name" name="name"  value="<?php if (isset($_POST['submit'])) { echo $name; } ?>" required>
+                            <label>Name</label>
+                            </div>
+                            <div class="user-box">
+                            <input type="email" class="email" name="email"  value="<?php if (isset($_POST['submit'])) { echo $email; } ?>" required>
+                            <label>Email</label>
+                            </div>
+                            <div class="user-box">
+                            <input type="password" class="password" name="password" required>
+                            <label>password</label>
+                            </div>
+                            <div class="user-box">
+                            <input type="password" class="confirm-password" name="confirm-password"  required>
+                            <label>confirm-password</label>
+                            </div>
+                            <div class="btm">
+                            <button name="submit"  type="submit">
+                             <span></span>
+                            <span></span>
+                          <span></span>
+                           <span></span>
+                              Submit
+                            </button>
                         </form>
                         <div class="social-icons">
                             <p>Have an account! <a href="index.php">Login</a>.</p>
@@ -117,16 +118,5 @@
                 </div>
             </div>
         </div>
-    </section>
-    <script src="jquery.min.js"></script>
-    <script>
-        $(document).ready(function (c) {
-            $('.alert-close').on('click', function (c) {
-                $('.main-mockup').fadeOut('slow', function (c) {
-                    $('.main-mockup').remove();
-                });
-            });
-        });
-    </script>
 </body>
 </html>

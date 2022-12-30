@@ -2,13 +2,13 @@
 $msg = "";
 include 'config.php';
 if (isset($_GET['reset'])) {
-    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE otp='{$_GET['reset']}'")) > 0) {
+    if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE code='{$_GET['reset']}'")) > 0) {
         if (isset($_POST['submit'])) {
             $password = mysqli_real_escape_string($conn, md5($_POST['password']));
             $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm-password']));
 
             if ($password === $confirm_password) {
-                $query = mysqli_query($conn, "UPDATE users SET password='{$password}', otp='' WHERE otp='{$_GET['reset']}'");
+                $query = mysqli_query($conn, "UPDATE users SET password='{$password}', code='' WHERE code='{$_GET['reset']}'");
 
                 if ($query) {
                     header("Location: index.php");
@@ -33,30 +33,32 @@ if (isset($_GET['reset'])) {
     <meta name="keywords"
         content="Login Form" />
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="lol.css" type="text/css" media="all" />
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="w3l-mockup-form">
-        <div class="container">
-            <div class="workinghny-form-grid">
-                <div class="main-mockup">
-                    <div class="">
-                        <span class=""></span>
-                    </div>
-                    <div class="w3l_form align-self">
-                        <div class="left_grid_info">
-                            <img src="1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="content-wthree">
+<div class="login-box">
+            <h2>Login</h2>
+                    <form>
                         <h2>Change Password</h2>
                         <p>From here you can change your password </p>
                         <?php echo $msg; ?>
                         <form action="" method="post">
-                            <input type="password" class="password" name="password" placeholder="Enter Your Password" required>
-                            <input type="password" class="confirm-password" name="confirm-password" placeholder="Enter Your Confirm Password" required>
-                            <button name="submit" class="btn" type="submit">Change Password</button>
+                        <div class="user-box">
+                            <input type="password" class="password" name="password" required>
+                            <label>password</label>
+                            </div>
+                            <div class="user-box">
+                            <input type="password" class="confirm-password" name="confirm-password"  required>
+                            <label>confirm password</label>
+                            </div>
+                            <button name="submit"  type="submit" lass="btn" type="submit">
+                             <span></span>
+                             <span></span>
+                             <span></span>
+                             <span></span>
+                             Submit
+                          </button>
                         </form>
                         <div class="social-icons">
                             <p>Back to! <a href="index.php">Login</a>.</p>
@@ -65,18 +67,6 @@ if (isset($_GET['reset'])) {
                 </div>
             </div>
         </div>
-    </section>
-    <script src="jquery.min.js"></script>
-    <script>
-        $(document).ready(function (c) {
-            $('.alert-close').on('click', function (c) {
-                $('.main-mockup').fadeOut('slow', function (c) {
-                    $('.main-mockup').remove();
-                });
-            });
-        });
-    </script>
-
 </body>
 
 </html>
