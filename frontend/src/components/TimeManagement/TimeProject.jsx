@@ -10,12 +10,7 @@ function TimeProject() {
     name: "exam",
     days: 0,
     time: [0, 0],
-    subjects: [
-      { name: "science", val: 90 },
-      { name: "maths", val: 60 },
-      { name: "sinhala", val: 80 },
-      { name: "history", val: 40 },
-    ],
+    subjects: [{ name: "subject", val: 10 }],
   });
 
   const onSubjectNameChange = (e) => {
@@ -49,10 +44,10 @@ function TimeProject() {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
-        setData(data);
-        let projects = data["projects"];
-        let len = data["projects"].length + 1;
+      .then((responseData) => {
+        setData(responseData);
+        let projects = responseData["projects"];
+        let len = responseData["projects"].length + 1;
         let project = { ...projectInfo };
         project["id"] = Number(len);
         projects.push({ ...project });
@@ -63,7 +58,7 @@ function TimeProject() {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(responseData),
         })
           .then((response) => {
             return response.json();

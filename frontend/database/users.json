@@ -35,6 +35,60 @@
             }
           ],
           "id": 1
+        },
+        {
+          "name": "class exam",
+          "days": "10",
+          "time": [
+            "2",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "english",
+              "val": 35
+            },
+            {
+              "name": "maths",
+              "val": 66
+            },
+            {
+              "name": "science",
+              "val": 80
+            },
+            {
+              "name": "history",
+              "val": 0
+            }
+          ],
+          "id": 2
+        },
+        {
+          "name": "class exam",
+          "days": "10",
+          "time": [
+            "2",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "english",
+              "val": 35
+            },
+            {
+              "name": "maths",
+              "val": 66
+            },
+            {
+              "name": "science",
+              "val": 80
+            },
+            {
+              "name": "history",
+              "val": 18
+            }
+          ],
+          "id": 3
         }
       ]
     }

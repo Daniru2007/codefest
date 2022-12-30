@@ -20,7 +20,7 @@ function TimeManagement() {
       });
   };
   useLayoutEffect(() => {
-    fetchJson(`http://localhost:3000/users/${userId}`);
+    fetchJson();
   }, []);
   useEffect(() => {
     const timeout = setInterval(() => {
