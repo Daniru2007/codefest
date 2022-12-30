@@ -38,10 +38,10 @@
         },
         {
           "name": "class exam",
-          "days": "10",
+          "days": "14",
           "time": [
-            "2",
-            "30"
+            "3",
+            "0"
           ],
           "subjects": [
             {
@@ -58,7 +58,7 @@
             },
             {
               "name": "history",
-              "val": 0
+              "val": 60
             }
           ],
           "id": 2
@@ -89,6 +89,29 @@
             }
           ],
           "id": 3
+        },
+        {
+          "name": "AL exam",
+          "days": "4",
+          "time": [
+            "3",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "ICT",
+              "val": 30
+            },
+            {
+              "name": "Physics",
+              "val": 80
+            },
+            {
+              "name": "Combined Maths",
+              "val": 95
+            }
+          ],
+          "id": 4
         }
       ]
     }

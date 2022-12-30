@@ -6,7 +6,12 @@ function TimeProjectItem() {
   const userId = 1;
   const { id } = useParams();
   const [data, setData] = useState({});
-  const [project, setProject] = useState({ subjects: [] });
+  const [project, setProject] = useState({
+    name: "",
+    days: 0,
+    time: [0, 0],
+    subjects: [{ name: "subject", val: 10 }],
+  });
 
   const onNameChange = (e) => {
     setProject({
@@ -165,6 +170,8 @@ function TimeProjectItem() {
           value={project?.["time"]?.[0]}
           onChange={onInfoChange}
         />
+      </label>
+      <label>
         minutes:
         <input
           type="number"
