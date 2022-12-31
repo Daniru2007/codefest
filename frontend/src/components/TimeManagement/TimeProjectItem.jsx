@@ -1,10 +1,14 @@
 import "./TimeProjectItem.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from "react";
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
 function TimeProjectItem() {
   const userId = 1;
   const { id } = useParams();
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
+  const [chartData, setChartData] = useState([]);
   const [data, setData] = useState({});
   const [project, setProject] = useState({
     name: "",
@@ -135,6 +139,25 @@ function TimeProjectItem() {
       });
   };
 
+  useEffect(() => {
+    let subjects = [...project["subjects"]];
+    let sum = 0;
+    let chartDataTemp = [];
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      sum += subject.val;
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      chartDataTemp.push({
+        name: subject.name,
+        val: Math.round((subject.val / sum) * 100),
+        // val: Math.round(subject.val),
+      });
+    }
+    setChartData(chartDataTemp);
+  }, [project]);
+
   return (
     <div>
       <label>
@@ -213,6 +236,18 @@ function TimeProjectItem() {
       })}
       <button onClick={addSubjects}>Add +</button>
       <button onClick={saveData}>Save</button>
+      <PieChart width={730} height={250}>
+        <Pie
+          data={chartData}
+          fill="#8884d8"
+          dataKey="val"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          outerRadius={50}
+          label={(entry) => entry.name}
+        />
+      </PieChart>
     </div>
   );
 }
