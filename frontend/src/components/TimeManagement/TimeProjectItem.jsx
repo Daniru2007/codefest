@@ -1,12 +1,18 @@
 import "./TimeProjectItem.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from "react";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Sector,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 
 function TimeProjectItem() {
   const userId = 1;
   const { id } = useParams();
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   const [chartData, setChartData] = useState([]);
   const [data, setData] = useState({});
@@ -16,6 +22,16 @@ function TimeProjectItem() {
     time: [0, 0],
     subjects: [{ name: "subject", val: 10 }],
   });
+  const [colors, setColors] = useState([]);
+
+  // TODO color generator which returns color array to useLayoutEffect and adding colors on project changes
+  const randomColorGenerator = (amount) => {
+    let colorsTemp = [];
+    for (let i = 0; i < amount; i++) {
+      colorsTemp.push("#" + Math.floor(Math.random() * 16777215).toString(16));
+    }
+    return colorsTemp;
+  };
 
   const onNameChange = (e) => {
     setProject({
@@ -27,6 +43,9 @@ function TimeProjectItem() {
   const addSubjects = (e) => {
     let subjects = project?.["subjects"] ? project["subjects"] : [];
     subjects.push({ name: "new subject", val: 0 });
+    let colorsTemp = [...colors];
+    colorsTemp.push("#" + Math.floor(Math.random() * 16777215).toString(16));
+    setColors(colorsTemp);
     setProject({
       ...project,
       subjects: [...subjects],
@@ -93,6 +112,7 @@ function TimeProjectItem() {
           }
         })[0];
         setProject({ ...proj });
+        setColors(randomColorGenerator(proj["subjects"].length));
       })
       .catch((error) => {
         console.log(error);
@@ -153,6 +173,7 @@ function TimeProjectItem() {
         name: subject.name,
         val: Math.round((subject.val / sum) * 100),
         // val: Math.round(subject.val),
+        fill: colors[i],
       });
     }
     setChartData(chartDataTemp);
@@ -245,8 +266,8 @@ function TimeProjectItem() {
           cx="50%"
           cy="50%"
           outerRadius={50}
-          label={(entry) => entry.name}
         />
+        <Legend />
       </PieChart>
     </div>
   );
