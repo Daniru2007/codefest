@@ -8,6 +8,7 @@ import {
   Cell,
   ResponsiveContainer,
   Legend,
+  Tooltip,
 } from "recharts";
 
 function TimeProjectItem() {
@@ -251,24 +252,37 @@ function TimeProjectItem() {
               />
               {subject.val}%
             </label>
+            <p>
+              hours:{" "}
+              {(
+                (chartData?.[key]?.val / 1000) *
+                (project?.["days"] *
+                  (project?.["time"][0] + project?.["time"][1] / 60))
+              ).toFixed(1)}
+            </p>
             <br />
           </div>
         );
       })}
       <button onClick={addSubjects}>Add +</button>
       <button onClick={saveData}>Save</button>
-      <PieChart width={730} height={250}>
-        <Pie
-          data={chartData}
-          fill="#8884d8"
-          dataKey="val"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={50}
-        />
-        <Legend />
-      </PieChart>
+      <div style={{ width: "50vw", height: "50vh" }}>
+        <ResponsiveContainer>
+          <PieChart width={730} height={500}>
+            <Pie
+              data={chartData}
+              fill="#8884d8"
+              dataKey="val"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={100}
+            />
+            <Legend />
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
