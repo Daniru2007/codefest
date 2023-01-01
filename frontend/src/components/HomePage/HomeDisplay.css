@@ -1,6 +1,6 @@
 .home-display {
   color: white;
-  background-color: rgb(27, 27, 27);
+  background-color: #0f111a;
   height: max-content;
   display: flex;
   justify-content: center;
@@ -9,7 +9,8 @@
 }
 
 .home-display__contents {
-  background-color: rgb(70, 70, 70);
+  /* background-color: rgb(70, 70, 70); */
+  background-color: #090b10;
   height: max-content;
   width: max-content;
   margin-top: -40px;
@@ -37,7 +38,8 @@
   width: 400px;
   height: 200px;
   border-radius: 10px;
-  background-color: rgb(27, 27, 27);
+  /* background-color: rgb(27, 27, 27); */
+  background-color: #0f111a;
   overflow: hidden;
   margin: 10px;
 }
@@ -84,9 +86,15 @@
     width: 320px;
   }
 
+  .content {
+    background-color: #090b10;
+  }
+
   .home-display__contents {
+    background-color: #0f111a;
     margin-top: 0px;
     width: 100%;
+    height: 100%;
     border-radius: 0%;
   }
 }
@@ -101,7 +109,7 @@
 }
 
 .home-display__benefits {
-  background-color: rgb(70, 70, 70);
+  background-color: #090b10;
   height: max-content;
   width: 100%;
   margin-top: 100px;

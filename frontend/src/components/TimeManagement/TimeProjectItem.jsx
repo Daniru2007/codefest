@@ -1,10 +1,21 @@
 import "./TimeProjectItem.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from "react";
+import {
+  PieChart,
+  Pie,
+  Sector,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from "recharts";
 
 function TimeProjectItem() {
   const userId = 1;
   const { id } = useParams();
+
+  const [chartData, setChartData] = useState([]);
   const [data, setData] = useState({});
   const [project, setProject] = useState({
     name: "",
@@ -12,6 +23,16 @@ function TimeProjectItem() {
     time: [0, 0],
     subjects: [{ name: "subject", val: 10 }],
   });
+  const [colors, setColors] = useState([]);
+
+  // TODO color generator which returns color array to useLayoutEffect and adding colors on project changes
+  const randomColorGenerator = (amount) => {
+    let colorsTemp = [];
+    for (let i = 0; i < amount; i++) {
+      colorsTemp.push("#" + Math.floor(Math.random() * 16777215).toString(16));
+    }
+    return colorsTemp;
+  };
 
   const onNameChange = (e) => {
     setProject({
@@ -23,6 +44,9 @@ function TimeProjectItem() {
   const addSubjects = (e) => {
     let subjects = project?.["subjects"] ? project["subjects"] : [];
     subjects.push({ name: "new subject", val: 0 });
+    let colorsTemp = [...colors];
+    colorsTemp.push("#" + Math.floor(Math.random() * 16777215).toString(16));
+    setColors(colorsTemp);
     setProject({
       ...project,
       subjects: [...subjects],
@@ -89,6 +113,7 @@ function TimeProjectItem() {
           }
         })[0];
         setProject({ ...proj });
+        setColors(randomColorGenerator(proj["subjects"].length));
       })
       .catch((error) => {
         console.log(error);
@@ -134,6 +159,26 @@ function TimeProjectItem() {
         console.log(error);
       });
   };
+
+  useEffect(() => {
+    let subjects = [...project["subjects"]];
+    let sum = 0;
+    let chartDataTemp = [];
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      sum += subject.val;
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      chartDataTemp.push({
+        name: subject.name,
+        val: Math.round((subject.val / sum) * 100),
+        // val: Math.round(subject.val),
+        fill: colors[i],
+      });
+    }
+    setChartData(chartDataTemp);
+  }, [project]);
 
   return (
     <div>
@@ -207,12 +252,37 @@ function TimeProjectItem() {
               />
               {subject.val}%
             </label>
+            <p>
+              hours:{" "}
+              {(
+                (chartData?.[key]?.val / 1000) *
+                (project?.["days"] *
+                  (project?.["time"][0] + project?.["time"][1] / 60))
+              ).toFixed(1)}
+            </p>
             <br />
           </div>
         );
       })}
       <button onClick={addSubjects}>Add +</button>
       <button onClick={saveData}>Save</button>
+      <div style={{ width: "50vw", height: "50vh" }}>
+        <ResponsiveContainer>
+          <PieChart width={730} height={500}>
+            <Pie
+              data={chartData}
+              fill="#8884d8"
+              dataKey="val"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={100}
+            />
+            <Legend />
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
