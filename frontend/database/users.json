@@ -112,6 +112,21 @@
             }
           ],
           "id": 4
+        },
+        {
+          "name": "Self Study",
+          "days": 0,
+          "time": [
+            0,
+            0
+          ],
+          "subjects": [
+            {
+              "name": "subject",
+              "val": 10
+            }
+          ],
+          "id": 5
         }
       ]
     }
