@@ -4,7 +4,7 @@
   align-items: flex-start;
   flex-direction: column;
   height: 90vh;
-  background-blend-mode: darken;
+  background-attachment: fixed;
   background-image: url("../../assets/books.jpg");
   background-repeat: no-repeat;
   background-position: right;
