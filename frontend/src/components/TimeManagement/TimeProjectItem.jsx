@@ -24,6 +24,8 @@ function TimeProjectItem() {
     subjects: [{ name: "subject", val: 10 }],
   });
   const [colors, setColors] = useState([]);
+  const [time, setTime] = useState([10, 1, 0]);
+  const [stop, setStop] = useState(true);
 
   // TODO color generator which returns color array to useLayoutEffect and adding colors on project changes
   const randomColorGenerator = (amount) => {
@@ -180,6 +182,35 @@ function TimeProjectItem() {
     setChartData(chartDataTemp);
   }, [project]);
 
+  useEffect(() => {
+    if (!stop) {
+      let timeout = setInterval(() => {
+        if (time[2] <= 0) {
+          if (time[1] <= 0) {
+            setTime([time[0] - 1, 59, 59]);
+          } else {
+            setTime([time[0], time[1] - 1, 59]);
+          }
+        } else {
+          setTime([time[0], time[1], time[2] - 1]);
+        }
+      }, 1000);
+      return () => clearInterval(timeout);
+    }
+  });
+
+  const startTimer = (key) => {
+    let hours = Number(
+      (
+        (chartData?.[key]?.val / 1000) *
+        (project?.["days"] * (project?.["time"][0] + project?.["time"][1] / 60))
+      ).toFixed(1)
+    );
+    let minutes = (hours - Math.floor(hours)).toFixed(1) * 60;
+    hours = Math.floor(hours);
+    setTime([hours, minutes, 0]);
+  };
+
   return (
     <div>
       <label>
@@ -252,6 +283,7 @@ function TimeProjectItem() {
               />
               {subject.val}%
             </label>
+            <button onClick={() => startTimer(key)}>start Timer</button>
             <p>
               hours:{" "}
               {(
@@ -283,6 +315,12 @@ function TimeProjectItem() {
           </PieChart>
         </ResponsiveContainer>
       </div>
+      <h1>
+        {time[0].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+        {time[1].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+        {time[2].toLocaleString("en-US", { minimumIntegerDigits: 2 })}
+      </h1>
+      <button onClick={() => setStop(!stop)}>{stop ? "start" : "stop"}</button>
     </div>
   );
 }
