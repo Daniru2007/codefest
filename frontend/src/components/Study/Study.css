@@ -40,7 +40,7 @@
     display: inline-block;
     border: solid 3px #9a7c7c;
     border-radius: 10%;
-    /* margin-left: 50px; */
+    margin-right: 50px;
     margin-top: 70px;
 }
 
@@ -63,6 +63,7 @@
     width: 100%;
     margin-top: 3px;
     margin-left: 30px;
+    margin-right: 70px;
     
 }
 
