@@ -1,5 +1,6 @@
 .typewriter {
   color: white;
+  text-shadow: 0px 0px 50px black;
   display: block;
   font-size: 80px;
   margin-left: 30px;
