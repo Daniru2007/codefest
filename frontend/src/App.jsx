@@ -18,6 +18,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/study" element={<Study />} />
+          <Route path="/study/:grade" element={<Study />} />
+          <Route path="/study/:grade/:subject" element={<Study />} />
+          <Route path="/study/:grade/:subject/:lesson" element={<Study />} />
+          <Route path="/study" element={<Study />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/time" element={<TimeManagement />} />
           <Route path="time/project" element={<TimeProject />} />

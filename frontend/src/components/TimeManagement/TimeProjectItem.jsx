@@ -26,8 +26,8 @@ function TimeProjectItem() {
   const [colors, setColors] = useState([]);
   const [time, setTime] = useState([10, 1, 0]);
   const [stop, setStop] = useState(true);
+  const [currentSubjectId, setCurrentSubjectId] = useState(0);
 
-  // TODO color generator which returns color array to useLayoutEffect and adding colors on project changes
   const randomColorGenerator = (amount) => {
     let colorsTemp = [];
     for (let i = 0; i < amount; i++) {
@@ -209,6 +209,7 @@ function TimeProjectItem() {
     let minutes = (hours - Math.floor(hours)).toFixed(1) * 60;
     hours = Math.floor(hours);
     setTime([hours, minutes, 0]);
+    setCurrentSubjectId(key);
   };
 
   return (
