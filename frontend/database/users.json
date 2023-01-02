@@ -6,8 +6,8 @@
       "password": "password123",
       "projects": [
         {
-          "name": "most hated thing",
-          "days": "7",
+          "name": "exam",
+          "days": "14",
           "time": [
             "2",
             "30"
@@ -15,118 +15,26 @@
           "subjects": [
             {
               "name": "science",
-              "val": 75
+              "val": 82,
+              "time": "19.5"
             },
             {
               "name": "maths",
-              "val": 40
-            },
-            {
-              "name": "sinhala",
-              "val": 50
-            },
-            {
-              "name": "history",
-              "val": 65
+              "val": 50,
+              "time": "11.9"
             },
             {
               "name": "drama",
-              "val": 20
+              "val": 10,
+              "time": "2.4"
+            },
+            {
+              "name": "english",
+              "val": 5,
+              "time": "1.2"
             }
           ],
           "id": 1
-        },
-        {
-          "name": "class exam",
-          "days": "14",
-          "time": [
-            "3",
-            "0"
-          ],
-          "subjects": [
-            {
-              "name": "english",
-              "val": 35
-            },
-            {
-              "name": "maths",
-              "val": 66
-            },
-            {
-              "name": "science",
-              "val": 80
-            },
-            {
-              "name": "history",
-              "val": 60
-            }
-          ],
-          "id": 2
-        },
-        {
-          "name": "class exam",
-          "days": "10",
-          "time": [
-            "2",
-            "30"
-          ],
-          "subjects": [
-            {
-              "name": "english",
-              "val": 35
-            },
-            {
-              "name": "maths",
-              "val": 66
-            },
-            {
-              "name": "science",
-              "val": 80
-            },
-            {
-              "name": "history",
-              "val": 18
-            }
-          ],
-          "id": 3
-        },
-        {
-          "name": "AL exam",
-          "days": "4",
-          "time": [
-            "3",
-            "30"
-          ],
-          "subjects": [
-            {
-              "name": "ICT",
-              "val": 30
-            },
-            {
-              "name": "Physics",
-              "val": 80
-            },
-            {
-              "name": "Combined Maths",
-              "val": 95
-            }
-          ],
-          "id": 4
-        },
-        {
-          "name": "Self Study",
-          "days": 0,
-          "time": [
-            0,
-            0
-          ],
-          "subjects": [
-            {
-              "name": "subject",
-              "val": 10
-            }
-          ],
-          "id": 5
         }
       ]
     }

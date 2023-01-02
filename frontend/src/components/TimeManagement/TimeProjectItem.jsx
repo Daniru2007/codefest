@@ -21,8 +21,12 @@ function TimeProjectItem() {
     name: "",
     days: 0,
     time: [0, 0],
-    subjects: [{ name: "subject", val: 10 }],
+    subjects: [{ name: "subject", val: 0, time: 0 }],
   });
+
+  const [subjectTime, setSubjectTime] = useState([
+    { name: "subject", val: 0, time: 0 },
+  ]);
   const [colors, setColors] = useState([]);
   const [time, setTime] = useState([10, 1, 0]);
   const [stop, setStop] = useState(true);
@@ -182,7 +186,38 @@ function TimeProjectItem() {
     setChartData(chartDataTemp);
   }, [project]);
 
+  const ChangeSubjectTime = () => {
+    let subjects = [...project["subjects"]];
+    let sum = 0;
+    let subjectTimeTemp = [];
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      sum += subject.val;
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      let time = (
+        (subject.val / sum) *
+        (project?.["days"] *
+          (Number(project?.["time"][0]) + Number(project?.["time"][1]) / 60))
+      ).toFixed(1);
+      if (time === "NaN") time = 0;
+      subjectTimeTemp.push({
+        name: subject.name,
+        val: subject.val,
+        time: time,
+      });
+    }
+    setSubjectTime(subjectTimeTemp);
+  };
+
   useEffect(() => {
+    ChangeSubjectTime();
+  }, [project]);
+
+  useEffect(() => {
+    let hours = 0;
+    let minutes = 0;
     if (!stop) {
       let timeout = setInterval(() => {
         if (time[2] <= 0) {
@@ -285,14 +320,7 @@ function TimeProjectItem() {
               {subject.val}%
             </label>
             <button onClick={() => startTimer(key)}>start Timer</button>
-            <p>
-              hours:{" "}
-              {(
-                (chartData?.[key]?.val / 1000) *
-                (project?.["days"] *
-                  (project?.["time"][0] + project?.["time"][1] / 60))
-              ).toFixed(1)}
-            </p>
+            <p>hours: {subjectTime[key]?.time}</p>
             <br />
           </div>
         );
