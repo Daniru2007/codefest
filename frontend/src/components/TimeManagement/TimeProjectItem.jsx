@@ -120,6 +120,7 @@ function TimeProjectItem() {
         })[0];
         setProject({ ...proj });
         setColors(randomColorGenerator(proj["subjects"].length));
+        setSubjectTime(proj.subjects);
       })
       .catch((error) => {
         console.log(error);
@@ -211,9 +212,16 @@ function TimeProjectItem() {
     setSubjectTime(subjectTimeTemp);
   };
 
-  useEffect(() => {
-    ChangeSubjectTime();
-  }, [project]);
+  // useEffect(() => {
+  //   ChangeSubjectTime();
+  // }, [project]);
+
+  const updateSubjectTime = (hours, minutes) => {
+    let projectTemp = { ...project };
+    projectTemp.subjects[currentSubjectId].time =
+      Number(hours) + Number(minutes / 60);
+    setProject(projectTemp);
+  };
 
   useEffect(() => {
     let hours = 0;
@@ -223,8 +231,10 @@ function TimeProjectItem() {
         if (time[2] <= 0) {
           if (time[1] <= 0) {
             setTime([time[0] - 1, 59, 59]);
+            updateSubjectTime(time[0] - 1, 59);
           } else {
             setTime([time[0], time[1] - 1, 59]);
+            updateSubjectTime(time[0], time[1] - 1);
           }
         } else {
           setTime([time[0], time[1], time[2] - 1]);
@@ -235,12 +245,7 @@ function TimeProjectItem() {
   });
 
   const startTimer = (key) => {
-    let hours = Number(
-      (
-        (chartData?.[key]?.val / 1000) *
-        (project?.["days"] * (project?.["time"][0] + project?.["time"][1] / 60))
-      ).toFixed(1)
-    );
+    let hours = Number(subjectTime[key].time);
     let minutes = (hours - Math.floor(hours)).toFixed(1) * 60;
     hours = Math.floor(hours);
     setTime([hours, minutes, 0]);
@@ -320,7 +325,7 @@ function TimeProjectItem() {
               {subject.val}%
             </label>
             <button onClick={() => startTimer(key)}>start Timer</button>
-            <p>hours: {subjectTime[key]?.time}</p>
+            <p>hours: {Number(project?.subjects?.[key]?.time)?.toFixed(1)}</p>
             <br />
           </div>
         );
