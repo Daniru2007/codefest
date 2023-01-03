@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   Legend,
   Tooltip,
+  RadialBarChart,
+  RadialBar,
 } from "recharts";
 
 function TimeProjectItem() {
@@ -28,9 +30,10 @@ function TimeProjectItem() {
     { name: "subject", val: 0, time: 0 },
   ]);
   const [colors, setColors] = useState([]);
-  const [time, setTime] = useState([10, 1, 0]);
+  const [time, setTime] = useState([0, 0, 0]);
   const [stop, setStop] = useState(true);
   const [currentSubjectId, setCurrentSubjectId] = useState(0);
+  const [progress, setProgress] = useState([1, 1]);
 
   const randomColorGenerator = (amount) => {
     let colorsTemp = [];
@@ -226,7 +229,7 @@ function TimeProjectItem() {
   useEffect(() => {
     let hours = 0;
     let minutes = 0;
-    if (!stop) {
+    if (!stop && !(time[0] === 0)) {
       let timeout = setInterval(() => {
         if (time[2] <= 0) {
           if (time[1] <= 0) {
@@ -251,6 +254,18 @@ function TimeProjectItem() {
     setTime([hours, minutes, 59]);
     setCurrentSubjectId(key);
   };
+
+  useEffect(() => {
+    let totalTime =
+      project?.["days"] *
+      (Number(project?.["time"][0]) + Number(project?.["time"][1]) / 60);
+    let currentTime = 0;
+    for (let i = 0; i < project["subjects"].length; i++) {
+      const subject = project["subjects"][i];
+      currentTime += Number(subject.time);
+    }
+    setProgress([1 - currentTime / totalTime, 1]);
+  }, [project]);
 
   return (
     <div>
@@ -355,6 +370,16 @@ function TimeProjectItem() {
         {time[2].toLocaleString("en-US", { minimumIntegerDigits: 2 })}
       </h1>
       <button onClick={() => setStop(!stop)}>{stop ? "start" : "stop"}</button>
+      <div className="progressbar">
+        <div
+          className="progressbar__red"
+          style={{ width: `${progress[1] * 400}px` }}
+        ></div>
+        <div
+          className="progressbar__green"
+          style={{ width: `${progress[0] * 400}px` }}
+        ></div>
+      </div>
     </div>
   );
 }
