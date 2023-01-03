@@ -246,9 +246,9 @@ function TimeProjectItem() {
 
   const startTimer = (key) => {
     let hours = Number(subjectTime[key].time);
-    let minutes = (hours - Math.floor(hours)).toFixed(1) * 60;
+    let minutes = (hours - Math.floor(hours)) * 60;
     hours = Math.floor(hours);
-    setTime([hours, minutes, 0]);
+    setTime([hours, minutes, 59]);
     setCurrentSubjectId(key);
   };
 
