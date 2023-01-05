@@ -7,7 +7,7 @@ function Study() {
   return (
     <div className="container">
       <h3>Start Your Learning Journey</h3>
-      <h1>Choose The Grade You Study</h1>
+      <h1>Choose The Grade You Study ?</h1>
       <div className="grades">
         <div className="grade">
           <a href="#study">
@@ -18,9 +18,10 @@ function Study() {
 
             <p>
               Education is not <br />
-              preparation for life; <br />
-              education is life itself. <br />
-              —John Dewey
+              preparation for <br />
+              life education is <br />
+              life itself <br />
+              —John Dewey.
             </p>
           </div>
         </div>
@@ -41,6 +42,8 @@ function Study() {
           </div>
         </div>
       </div>
+      <div className="grades"></div>
+
       <div className="grades">
         <div className="grade">
           <a href="#study">
@@ -51,10 +54,10 @@ function Study() {
             <h2>Grade 7</h2>
 
             <p>
-              Education is not <br />
-              preparation for life; <br />
-              education is life itself. <br />
-              —John Dewey
+              Instructions ends in <br />
+              school, but education <br />
+              ends only with life. <br />
+              -Fedrick Robertson.
             </p>
           </div>
         </div>
@@ -68,10 +71,10 @@ function Study() {
             <h2>Grade 9</h2>
 
             <p>
-              An investment in <br />
-              knowledge pays the <br />
-              best interest." <br />
-              —Benjamin Franklin.
+              The wholepurpose of <br />
+              education is to turn <br />
+              mirrors into windows. <br />
+              —Sydney J. Harris.
             </p>
           </div>
         </div>
