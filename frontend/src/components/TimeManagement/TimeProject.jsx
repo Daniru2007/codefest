@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TimeProject.css";
 
@@ -10,8 +10,11 @@ function TimeProject() {
     name: "exam",
     days: 0,
     time: [0, 0],
-    subjects: [{ name: "subject", val: 10 }],
+    subjects: [{ name: "subject", val: 0 }],
   });
+  const [subjectTime, setSubjectTime] = useState([
+    { name: "subject", val: 0, time: 0 },
+  ]);
 
   const onSubjectNameChange = (e) => {
     let id = parseInt(e.target.id);
@@ -50,6 +53,7 @@ function TimeProject() {
         let len = responseData["projects"].length + 1;
         let project = { ...projectInfo };
         project["id"] = Number(len);
+        project["subjects"] = subjectTime;
         projects.push({ ...project });
 
         fetch(`http://localhost:3000/users/${userId}`, {
@@ -110,6 +114,37 @@ function TimeProject() {
       time: [`${hours}`, `${mins}`],
     });
   };
+
+  const ChangeSubjectTime = () => {
+    let subjects = [...projectInfo["subjects"]];
+    let sum = 0;
+    let subjectTimeTemp = [];
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      sum += subject.val;
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      let time = (
+        (subject.val / sum) *
+        (projectInfo?.["days"] *
+          (Number(projectInfo?.["time"][0]) +
+            Number(projectInfo?.["time"][1]) / 60))
+      ).toFixed(1);
+      if (time === "NaN") time = 0;
+      subjectTimeTemp.push({
+        name: subject.name,
+        val: subject.val,
+        time: time,
+      });
+    }
+    setSubjectTime(subjectTimeTemp);
+  };
+
+  useEffect(() => {
+    ChangeSubjectTime();
+  }, [projectInfo]);
+
   return (
     <div>
       <label>
@@ -180,6 +215,7 @@ function TimeProject() {
               />
               {subject.val}%
             </label>
+            <p>{subjectTime?.[key]?.time}</p>
             <br />
           </div>
         );

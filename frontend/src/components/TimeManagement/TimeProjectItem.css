@@ -1,3 +1,21 @@
 * {
   outline: none;
 }
+
+.progressbar {
+  position: relative;
+  margin: 10px;
+  width: max-content;
+  height: max-content;
+}
+
+.progressbar__red {
+  position: absolute;
+  height: 20px;
+  background-color: red;
+}
+.progressbar__green {
+  position: absolute;
+  height: 20px;
+  background-color: green;
+}

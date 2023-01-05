@@ -11,7 +11,7 @@ function Study() {
       <div className="grades">
         <div className="grade">
           <a href="#study">
-            <img src="assets/img_study/grade_6.png"></img>
+            <img src="/assets/img_study/grade_6.png"></img>
           </a>
           <div className="grade6">
             <h2>Grade 6</h2>
@@ -26,7 +26,7 @@ function Study() {
         </div>
         <div className="grade">
           <a href="#study">
-            <img src="assets/img_study/grade_8.png"></img>
+            <img src="/assets/img_study/grade_8.png"></img>
           </a>
 
           <div className="grade8">
@@ -44,7 +44,7 @@ function Study() {
       <div className="grades">
         <div className="grade">
           <a href="#study">
-            <img src="assets/img_study/grade_7.png"></img>
+            <img src="/assets/img_study/grade_7.png"></img>
           </a>
 
           <div className="grade7">
@@ -61,7 +61,7 @@ function Study() {
 
         <div className="grade">
           <a href="#study">
-            <img src="assets/img_study/grade_9.png"></img>
+            <img src="/assets/img_study/grade_9.png"></img>
           </a>
 
           <div className="grade9">
