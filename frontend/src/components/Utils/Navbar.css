@@ -39,6 +39,14 @@
 .navbar__links__item:hover {
   opacity: 80%;
   transform: scale(1.3);
+
+
+  border: solid 1px #eacfcf;
+  border-radius: 10%;
+  background-color: #80cbc4;
+  color:black;
+
+
 }
 
 .navbar__right {
