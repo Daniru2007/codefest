@@ -9,6 +9,8 @@ import {
   ResponsiveContainer,
   Legend,
   Tooltip,
+  RadialBarChart,
+  RadialBar,
 } from "recharts";
 
 function TimeProjectItem() {
@@ -21,11 +23,18 @@ function TimeProjectItem() {
     name: "",
     days: 0,
     time: [0, 0],
-    subjects: [{ name: "subject", val: 10 }],
+    subjects: [{ name: "subject", val: 0, time: 0 }],
   });
-  const [colors, setColors] = useState([]);
 
-  // TODO color generator which returns color array to useLayoutEffect and adding colors on project changes
+  const [subjectTime, setSubjectTime] = useState([
+    { name: "subject", val: 0, time: 0 },
+  ]);
+  const [colors, setColors] = useState([]);
+  const [time, setTime] = useState([0, 0, 0]);
+  const [stop, setStop] = useState(true);
+  const [currentSubjectId, setCurrentSubjectId] = useState(0);
+  const [progress, setProgress] = useState([1, 1]);
+
   const randomColorGenerator = (amount) => {
     let colorsTemp = [];
     for (let i = 0; i < amount; i++) {
@@ -114,6 +123,7 @@ function TimeProjectItem() {
         })[0];
         setProject({ ...proj });
         setColors(randomColorGenerator(proj["subjects"].length));
+        setSubjectTime(proj.subjects);
       })
       .catch((error) => {
         console.log(error);
@@ -178,6 +188,83 @@ function TimeProjectItem() {
       });
     }
     setChartData(chartDataTemp);
+  }, [project]);
+
+  const ChangeSubjectTime = () => {
+    let subjects = [...project["subjects"]];
+    let sum = 0;
+    let subjectTimeTemp = [];
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      sum += subject.val;
+    }
+    for (let i = 0; i < subjects.length; i++) {
+      const subject = subjects[i];
+      let time = (
+        (subject.val / sum) *
+        (project?.["days"] *
+          (Number(project?.["time"][0]) + Number(project?.["time"][1]) / 60))
+      ).toFixed(1);
+      if (time === "NaN") time = 0;
+      subjectTimeTemp.push({
+        name: subject.name,
+        val: subject.val,
+        time: time,
+      });
+    }
+    setSubjectTime(subjectTimeTemp);
+  };
+
+  // useEffect(() => {
+  //   ChangeSubjectTime();
+  // }, [project]);
+
+  const updateSubjectTime = (hours, minutes) => {
+    let projectTemp = { ...project };
+    projectTemp.subjects[currentSubjectId].time =
+      Number(hours) + Number(minutes / 60);
+    setProject(projectTemp);
+  };
+
+  useEffect(() => {
+    let hours = 0;
+    let minutes = 0;
+    if (!stop && !(time[0] === 0)) {
+      let timeout = setInterval(() => {
+        if (time[2] <= 0) {
+          if (time[1] <= 0) {
+            setTime([time[0] - 1, 59, 59]);
+            updateSubjectTime(time[0] - 1, 59);
+          } else {
+            setTime([time[0], time[1] - 1, 59]);
+            updateSubjectTime(time[0], time[1] - 1);
+          }
+        } else {
+          setTime([time[0], time[1], time[2] - 1]);
+        }
+      }, 1000);
+      return () => clearInterval(timeout);
+    }
+  });
+
+  const startTimer = (key) => {
+    let hours = Number(subjectTime[key].time);
+    let minutes = (hours - Math.floor(hours)) * 60;
+    hours = Math.floor(hours);
+    setTime([hours, minutes, 59]);
+    setCurrentSubjectId(key);
+  };
+
+  useEffect(() => {
+    let totalTime =
+      project?.["days"] *
+      (Number(project?.["time"][0]) + Number(project?.["time"][1]) / 60);
+    let currentTime = 0;
+    for (let i = 0; i < project["subjects"].length; i++) {
+      const subject = project["subjects"][i];
+      currentTime += Number(subject.time);
+    }
+    setProgress([1 - currentTime / totalTime, 1]);
   }, [project]);
 
   return (
@@ -252,14 +339,8 @@ function TimeProjectItem() {
               />
               {subject.val}%
             </label>
-            <p>
-              hours:{" "}
-              {(
-                (chartData?.[key]?.val / 1000) *
-                (project?.["days"] *
-                  (project?.["time"][0] + project?.["time"][1] / 60))
-              ).toFixed(1)}
-            </p>
+            <button onClick={() => startTimer(key)}>start Timer</button>
+            <p>hours: {Number(project?.subjects?.[key]?.time)?.toFixed(1)}</p>
             <br />
           </div>
         );
@@ -282,6 +363,22 @@ function TimeProjectItem() {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
+      </div>
+      <h1>
+        {time[0].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+        {time[1].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+        {time[2].toLocaleString("en-US", { minimumIntegerDigits: 2 })}
+      </h1>
+      <button onClick={() => setStop(!stop)}>{stop ? "start" : "stop"}</button>
+      <div className="progressbar">
+        <div
+          className="progressbar__red"
+          style={{ width: `${progress[1] * 400}px` }}
+        ></div>
+        <div
+          className="progressbar__green"
+          style={{ width: `${progress[0] * 400}px` }}
+        ></div>
       </div>
     </div>
   );

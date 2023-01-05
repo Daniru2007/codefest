@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
 import Study from "./components/Study/Study";
+import StudyGrade from "./components/Study/StudyGrade";
+import StudySubject from "./components/Study/StudySubject";
+import StudyLesson from "./components/Study/StudyLesson";
 import TimeManagement from "./components/TimeManagement/TimeManagement";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TimeProject from "./components/TimeManagement/TimeProject";
@@ -17,6 +20,13 @@ function App() {
         <Routes mode="absolute">
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/study/" element={<Study />} />
+          <Route path="/study/:grade" element={<StudyGrade />} />
+          <Route path="/study/:grade/:subject" element={<StudySubject />} />
+          <Route
+            path="/study/:grade/:subject/:lesson"
+            element={<StudyLesson />}
+          />
           <Route path="/study" element={<Study />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/time" element={<TimeManagement />} />
