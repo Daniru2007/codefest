@@ -2,6 +2,10 @@
   outline: none;
 }
 
+.projectItem {
+  height: max-content;
+}
+
 .progressbar {
   position: relative;
   margin: 10px;

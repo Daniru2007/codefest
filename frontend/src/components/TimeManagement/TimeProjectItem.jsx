@@ -268,7 +268,7 @@ function TimeProjectItem() {
   }, [project]);
 
   return (
-    <div>
+    <div className="projectItem">
       <label>
         Name{" "}
         <input
