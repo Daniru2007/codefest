@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { BsFillPlusSquareFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "./TimeProject.css";
 
 function TimeProject() {
@@ -148,6 +149,9 @@ function TimeProject() {
 
   return (
     <div className="project__add">
+      <Link to={"../time"}>
+        <BsArrowLeftCircleFill className="back__button" />
+      </Link>
       <label className="project__name">
         Name{" "}
         <input

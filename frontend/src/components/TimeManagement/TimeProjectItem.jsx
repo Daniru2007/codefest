@@ -1,5 +1,5 @@
 import "./TimeProjectItem.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from "react";
 import {
   PieChart,
@@ -16,6 +16,7 @@ import {
 import { FaHourglassStart } from "react-icons/fa";
 import { AiFillPauseCircle } from "react-icons/ai";
 import { AiFillPlayCircle } from "react-icons/ai";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 
 function TimeProjectItem() {
   const userId = 1;
@@ -273,6 +274,9 @@ function TimeProjectItem() {
 
   return (
     <div className="projectItem">
+      <Link to={"../time"}>
+        <BsArrowLeftCircleFill className="back__button" />
+      </Link>
       <div className="details">
         <h1 className="projectItem__name">{project?.["name"]}</h1>
         <h2 className="projectItem__days">Days: {project?.["days"]}</h2>

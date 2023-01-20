@@ -2,6 +2,8 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { AiFillPlusCircle } from "react-icons/ai";
+
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "./TimeManagement.css";
 
 function TimeManagement() {
@@ -59,6 +61,9 @@ function TimeManagement() {
 
   return (
     <div className="project__timer">
+      <Link to={"../"}>
+        <BsArrowLeftCircleFill className="back__button" />
+      </Link>
       <Link className="time__add" to={`./project/`}>
         Add {AiFillPlusCircle}
       </Link>

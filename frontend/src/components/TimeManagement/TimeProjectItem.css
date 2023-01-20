@@ -78,3 +78,17 @@
 .play__pause__button > *:hover {
   color: #4f567c;
 }
+
+.back__button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.back__button:hover {
+  color: rgba(255, 255, 255, 0.705);
+}
