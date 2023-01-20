@@ -146,8 +146,8 @@ function TimeProject() {
   }, [projectInfo]);
 
   return (
-    <div>
-      <label>
+    <div className="project__add">
+      <label className="project__name">
         Name{" "}
         <input
           type="text"

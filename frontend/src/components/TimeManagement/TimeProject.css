@@ -1,0 +1,19 @@
+.project__add {
+  background-color: #0f111a;
+  min-height: 100vh;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project__add > * {
+  color: #c4c4c4;
+}
+
+.project__name {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

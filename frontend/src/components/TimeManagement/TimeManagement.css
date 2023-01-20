@@ -1,0 +1,71 @@
+.time {
+  background-color: #0f111a;
+  min-height: 100vh;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time__add {
+  background-color: #1f2233;
+  font-size: 25px;
+  padding: 10px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #8f93a2;
+  transition: all 0.5s;
+  margin: 50px;
+}
+
+.time__add:hover {
+  background-color: #35354d;
+  color: #8f93a2;
+}
+
+.projects {
+  padding: 50px;
+  height: max-content;
+  width: max-content;
+  border-radius: 10px;
+}
+.projects.show {
+  background-color: #090b10;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project__link {
+  text-decoration: none;
+  color: #8f93a2;
+  transition: all 0.5s;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.project__link:hover {
+  color: #c4c4c4;
+}
+
+.delete__icon {
+  fill: #f07178;
+  font-size: 50px;
+  transition: all 0.5s;
+}
+
+.delete__button {
+  outline: none;
+  background: none;
+  margin-left: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete__icon:hover {
+  fill: #f18b90;
+}
