@@ -6,17 +6,22 @@
       "password": "password123",
       "projects": [
         {
-          "name": "exam",
-          "days": 0,
+          "name": "test",
+          "days": "10",
           "time": [
-            0,
-            0
+            "1",
+            "30"
           ],
           "subjects": [
             {
-              "name": "subject",
-              "val": 0,
-              "time": 0
+              "name": "science",
+              "val": 21,
+              "time": "4.3"
+            },
+            {
+              "name": "maths",
+              "val": 53,
+              "time": "10.7"
             }
           ],
           "id": 1

@@ -1,4 +1,4 @@
-.time {
+.project__timer {
   background-color: #0f111a;
   min-height: 100vh;
   height: max-content;
@@ -54,7 +54,7 @@
 
 .delete__icon {
   fill: #f07178;
-  font-size: 50px;
+  font-size: 40px;
   transition: all 0.5s;
 }
 

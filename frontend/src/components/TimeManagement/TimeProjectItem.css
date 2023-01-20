@@ -3,12 +3,17 @@
 }
 
 .projectItem {
+  min-height: 100vh;
   height: max-content;
+  background-color: #0f111a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .progressbar {
   position: relative;
-  margin: 10px;
   width: max-content;
   height: max-content;
 }
@@ -22,4 +27,54 @@
   position: absolute;
   height: 20px;
   background-color: green;
+}
+
+.projectItem__name {
+  color: #eeffff;
+}
+
+.projectItem__days {
+  margin-top: 20px;
+  color: #717cb4;
+}
+
+.projectItem__time {
+  color: #717cb4;
+}
+
+.projectItem__difficulty {
+  color: #717cb4;
+}
+
+.projectItem__subject__name {
+  color: rgb(75, 82, 109);
+}
+
+.start__timer {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.start__timer > * {
+  fill: #717cb4;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+.start__timer > *:hover {
+  fill: #555c83;
+  font-size: 20px;
+}
+
+.play__pause__button {
+  cursor: pointer;
+}
+.play__pause__button > * {
+  color: #717cb4;
+  font-size: 40px;
+  transition: all 0.5s;
+}
+.play__pause__button > *:hover {
+  color: #4f567c;
 }

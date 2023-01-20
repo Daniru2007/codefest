@@ -5,15 +5,126 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  color: #82aaff;
 }
 
 .project__add > * {
-  color: #c4c4c4;
+  color: #82aaff;
 }
 
 .project__name {
   font-size: 30px;
+  color: #717cb4;
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.project__name > input {
+  background: none;
+  border: none;
+  color: #82aaff;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  border-bottom: 1px #82aaff solid;
+  transition: 0.5s all;
+}
+
+.project__name > input:focus {
+  background: rgba(255, 255, 255, 0.295);
+}
+
+.project__days {
+  font-size: 20px;
+  color: #717cb4;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.project__days > input {
+  background: none;
+  border: none;
+  color: #82aaff;
+  padding: 10px;
+  width: 100px;
+  margin-left: 10px;
+  font-size: 18px;
+  border-bottom: 1px #82aaff solid;
+  transition: 0.5s all;
+}
+
+.project__days > input:focus {
+  background: rgba(255, 255, 255, 0.295);
+}
+.project__time > input {
+  background: none;
+  border: none;
+  color: #82aaff;
+  padding: 10px;
+  width: 50px;
+  margin-left: 10px;
+  font-size: 18px;
+  border-bottom: 1px #82aaff solid;
+  transition: 0.5s all;
+}
+
+.project__time > input:focus {
+  background: rgba(255, 255, 255, 0.295);
+}
+
+.addSubjects {
+  background: none;
+  border: none;
+}
+.addSubjects > * {
+  fill: #eeffff;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.addSubjects > *:hover {
+  fill: #acb3b3;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.subject__item > input[type="text"] {
+  background: none;
+  border: none;
+  color: #82aaff;
+  padding: 10px;
+  width: 150px;
+  margin-left: 10px;
+  font-size: 18px;
+  border-bottom: 1px #82aaff solid;
+  transition: 0.5s all;
+}
+
+.subject__item > input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.295);
+}
+
+input[type="range"] {
+  accent-color: #89ddff;
+  border: none;
+}
+
+.saveButton {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #82aaff;
+  color: #0f111a;
+  border: none;
+  border-radius: 10px;
+  margin-top: 50px;
+  font-size: 20px;
+  transition: 0.5s all;
+}
+
+.saveButton:hover {
+  background-color: #3e4e70;
 }

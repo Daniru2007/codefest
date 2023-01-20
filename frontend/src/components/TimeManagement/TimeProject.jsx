@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BsFillPlusSquareFill } from "react-icons/bs";
 import "./TimeProject.css";
 
 function TimeProject() {
@@ -152,14 +153,15 @@ function TimeProject() {
         <input
           type="text"
           value={projectInfo["name"]}
+          className="input"
           id="name"
           max={366}
           onChange={onNameChange}
         />
       </label>
       <br />
-      <label>
-        How many days?{" "}
+      <label className="project__days">
+        <p style={{ marginTop: "10px" }}>How many days? </p>
         <input
           type="number"
           value={projectInfo["days"]}
@@ -169,9 +171,13 @@ function TimeProject() {
         />
       </label>
       <br />
-      How much time do you study per day?{" "}
-      <label>
-        hours:
+      <p style={{ color: "#717CB4", fontSize: "20px" }}>
+        How much time do you study per day?{" "}
+      </p>
+      <label className="project__time">
+        <p style={{ display: "inline", color: "#4b526d", fontSize: "20px" }}>
+          hours:{" "}
+        </p>
         <input
           type="number"
           id="hours"
@@ -180,7 +186,10 @@ function TimeProject() {
           value={projectInfo["time"][0]}
           onChange={onInfoChange}
         />
-        minutes:
+        <p style={{ display: "inline", color: "#4b526d", fontSize: "20px" }}>
+          {" "}
+          minutes:
+        </p>
         <input
           type="number"
           id="mins"
@@ -192,16 +201,28 @@ function TimeProject() {
       </label>
       <br />
       <br />
-      difficulty
+      <p
+        style={{
+          display: "inline",
+          color: "#717CB4",
+          fontSize: "20px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        How much Difficult Are those Subjects?
+      </p>
       <br />
       {projectInfo["subjects"].map((subject) => {
         const key = projectInfo.subjects.indexOf(subject);
         return (
           <div className="subject" key={key}>
-            <label>
+            <label className="subject__item">
               <input
                 type="text"
                 value={subject.name}
+                className="subject__item__name"
                 id={key}
                 onChange={onSubjectNameChange}
               />
@@ -213,15 +234,19 @@ function TimeProject() {
                 max={100}
                 onChange={onSubjectValueChange}
               />
-              {subject.val}%
+              <span style={{ color: "#717cb4" }}>{subject.val}%</span>
             </label>
-            <p>{subjectTime?.[key]?.time}</p>
+            <p style={{ color: "#717cb4" }}>{subjectTime?.[key]?.time}</p>
             <br />
           </div>
         );
       })}
-      <button onClick={addSubjects}>Add +</button>
-      <button onClick={saveData}>Save</button>
+      <button onClick={addSubjects} className="addSubjects">
+        <BsFillPlusSquareFill />
+      </button>
+      <button onClick={saveData} className="saveButton">
+        Save
+      </button>
     </div>
   );
 }

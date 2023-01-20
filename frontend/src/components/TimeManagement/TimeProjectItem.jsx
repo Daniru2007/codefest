@@ -13,6 +13,10 @@ import {
   RadialBar,
 } from "recharts";
 
+import { FaHourglassStart } from "react-icons/fa";
+import { AiFillPauseCircle } from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
+
 function TimeProjectItem() {
   const userId = 1;
   const { id } = useParams();
@@ -269,67 +273,22 @@ function TimeProjectItem() {
 
   return (
     <div className="projectItem">
-      <label>
-        Name{" "}
-        <input
-          type="text"
-          value={project?.["name"]}
-          id="name"
-          max={366}
-          onChange={onNameChange}
-        />
-      </label>
-      <br />
-      <label>
-        How many days?{" "}
-        <input
-          type="number"
-          value={project?.["days"]}
-          id="days"
-          max={366}
-          onChange={onInfoChange}
-        />
-      </label>
-      <br />
-      How much time do you study per day?{" "}
-      <label>
-        hours:
-        <input
-          type="number"
-          id="hours"
-          min="1"
-          max="24"
-          value={project?.["time"]?.[0]}
-          onChange={onInfoChange}
-        />
-      </label>
-      <label>
-        minutes:
-        <input
-          type="number"
-          id="mins"
-          min="1"
-          max="24"
-          value={project?.["time"]?.[1]}
-          onChange={onInfoChange}
-        />
-      </label>
-      <br />
-      <br />
-      difficulty
-      <br />
-      {project?.["subjects"]?.map((subject) => {
-        const key = project.subjects.indexOf(subject);
-        return (
-          <div className="subject" key={key}>
-            <label>
-              <input
-                type="text"
-                value={subject.name}
-                id={key}
-                onChange={onSubjectNameChange}
-              />
-              <input
+      <div className="details">
+        <h1 className="projectItem__name">{project?.["name"]}</h1>
+        <h2 className="projectItem__days">Days: {project?.["days"]}</h2>
+        <h2 className="projectItem__time">
+          hours: {project?.["time"]?.[0]} minutes: {project?.["time"]?.[1]}
+        </h2>
+        <br />
+        <h2 className="projectItem__difficulty">Difficulty</h2>
+        {project?.["subjects"]?.map((subject) => {
+          const key = project.subjects.indexOf(subject);
+          return (
+            <div className="subject" key={key}>
+              <span className="projectItem__subject__name">
+                {subject.name}{" "}
+              </span>
+              <progress
                 type="range"
                 id={key}
                 value={subject.val}
@@ -337,48 +296,72 @@ function TimeProjectItem() {
                 max={100}
                 onChange={onSubjectValueChange}
               />
-              {subject.val}%
-            </label>
-            <button onClick={() => startTimer(key)}>start Timer</button>
-            <p>hours: {Number(project?.subjects?.[key]?.time)?.toFixed(1)}</p>
-            <br />
-          </div>
-        );
-      })}
-      <button onClick={addSubjects}>Add +</button>
-      <button onClick={saveData}>Save</button>
-      <div style={{ width: "50vw", height: "50vh" }}>
-        <ResponsiveContainer>
-          <PieChart width={730} height={500}>
-            <Pie
-              data={chartData}
-              fill="#8884d8"
-              dataKey="val"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-            />
-            <Legend />
-            <Tooltip />
-          </PieChart>
-        </ResponsiveContainer>
+              <span style={{ color: "rgb(75, 82, 109)" }}>
+                {" "}
+                {subject.val}%{" "}
+              </span>
+
+              <button onClick={() => startTimer(key)} className="start__timer">
+                <FaHourglassStart />
+              </button>
+              <p style={{ color: "rgb(75, 60, 100)" }}>
+                hours: {Number(project?.subjects?.[key]?.time)?.toFixed(1)}
+              </p>
+              <br />
+            </div>
+          );
+        })}
       </div>
-      <h1>
-        {time[0].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
-        {time[1].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
-        {time[2].toLocaleString("en-US", { minimumIntegerDigits: 2 })}
-      </h1>
-      <button onClick={() => setStop(!stop)}>{stop ? "start" : "stop"}</button>
-      <div className="progressbar">
-        <div
-          className="progressbar__red"
-          style={{ width: `${progress[1] * 400}px` }}
-        ></div>
-        <div
-          className="progressbar__green"
-          style={{ width: `${progress[0] * 400}px` }}
-        ></div>
+      <div className="display">
+        {/* <div className="progressbar">
+          <div
+            className="progressbar__red"
+            style={{ width: `${progress[1] * 400}px` }}
+          ></div>
+          <div
+            className="progressbar__green"
+            style={{ width: `${progress[0] * 400}px` }}
+          ></div>
+        </div> */}
+
+        <div style={{ width: "50vw", height: "50vh" }}>
+          <ResponsiveContainer>
+            <PieChart width={730} height={500}>
+              <Pie
+                data={chartData}
+                fill="#8884d8"
+                dataKey="val"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+              />
+              <Legend />
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+
+        <progress
+          type="range"
+          value={progress[0]}
+          min={0}
+          max={progress[1]}
+          onChange={onSubjectValueChange}
+          style={{ width: "600px", height: "30px" }}
+        />
+        <h1 style={{ color: "#717cb4" }}>
+          {time[0].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+          {time[1].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:
+          {time[2].toLocaleString("en-US", { minimumIntegerDigits: 2 })}
+        </h1>
+        <button
+          onClick={() => setStop(!stop)}
+          style={{ background: "none", border: "none" }}
+          className="play__pause__button"
+        >
+          {stop ? <AiFillPlayCircle /> : <AiFillPauseCircle />}
+        </button>
       </div>
     </div>
   );

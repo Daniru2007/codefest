@@ -58,7 +58,7 @@ function TimeManagement() {
   };
 
   return (
-    <div className="time">
+    <div className="project__timer">
       <Link className="time__add" to={`./project/`}>
         Add {AiFillPlusCircle}
       </Link>
