@@ -11,6 +11,6 @@
 
     if (mysqli_num_rows($query) > 0) {
         $row = mysqli_fetch_assoc($query);
-        header("Location: http://localhost:5173/%22");
+        header("Location: http://localhost:5173/");
     }
 ?>
