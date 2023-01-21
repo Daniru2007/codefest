@@ -25,8 +25,74 @@
             }
           ],
           "id": 1
+        },
+        {
+          "name": "exam",
+          "days": "14",
+          "time": [
+            "1",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "science",
+              "val": 21,
+              "time": "4.0"
+            },
+            {
+              "name": "maths",
+              "val": 41,
+              "time": "7.8"
+            },
+            {
+              "name": "sinhala",
+              "val": 49,
+              "time": "9.3"
+            }
+          ],
+          "id": 2
         }
       ]
     }
-  ]
+  ],
+  "content": {
+    "6": {
+      "science": {
+        "lessons": [
+          "lesson 1",
+          "lesson 2",
+          "lesson 3",
+          "lesson 4",
+          "lesson 5",
+          "lesson 6"
+        ],
+        "1": {
+          "links": [
+            {
+              "youtube": "https://www.youtube.com"
+            },
+            {
+              "youtube": "https://www.youtube.com"
+            },
+            {
+              "youtube": "https://www.youtube.com"
+            },
+            {
+              "youtube": "https://www.youtube.com"
+            }
+          ],
+          "quiz": [
+            {
+              "q": "how are you?",
+              "1": "fine",
+              "2": "not good",
+              "3": "bad",
+              "4": "non of your business",
+              "correct": 4
+            }
+          ]
+        }
+      }
+    }
+  }
 }

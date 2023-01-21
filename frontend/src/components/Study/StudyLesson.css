@@ -1,0 +1,87 @@
+.study__subject {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #090b10;
+}
+.back__img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 80vh;
+  width: 98vw;
+  background-attachment: fixed;
+  background-image: url("../../assets/studyBooks.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+psdsad {
+  color: rgb(255, 255, 255);
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 1px;
+  max-width: 555px;
+  width: 350px;
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+  margin-left: 30px;
+  margin-right: 30px;
+  max-width: 755px;
+  width: 550px;
+  font-size: 40px;
+}
+
+dsd {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  left: 20px;
+  top: 380px;
+
+  background: #d9d9d9;
+  border-radius: 60px;
+}
+
+.topper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  background-image: url("../../assets/lol.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.fullbody {
+  height: 1500px;
+  background-color: #090b10;
+}
+
+.subject__choose {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  min-height: 100vh;
+  height: max-content;
+}
+
+.subject__choose__item {
+  background-color: #0f111a;
+  color: white;
+  font-size: 30px;
+  padding: 20px 100px;
+  width: min-content;
+  height: min-content;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  margin: 50px 0px;
+}
