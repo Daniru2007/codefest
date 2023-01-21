@@ -4,6 +4,8 @@ import Quiz from "react-quiz-component";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import { BsArrowLeftCircleFill } from "react-icons/bs";
+
 import "./StudyQuiz.css";
 
 function StudyQuiz() {
@@ -38,6 +40,9 @@ function StudyQuiz() {
   useEffect(() => {}, [data]);
   return (
     <div className="project__quiz">
+      <Link to={`../study/${grade}/${subject}/${lesson}`}>
+        <BsArrowLeftCircleFill className="back__button" />
+      </Link>
       {(() => {
         if (quiz.questions) {
           return <Quiz quiz={quiz} />;

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
+import { HiLightBulb } from "react-icons/hi";
 import { useState } from "react";
 import "./StudyLesson.css";
 
@@ -62,6 +63,19 @@ function StudyLesson() {
         </a>
       </div>
       <div className="topper"></div>
+
+      <center>
+        <iframe
+          style={{ borderRadius: "10px", marginTop: "80px" }}
+          width="560"
+          height="315"
+          src={`${subjectData[lesson]?.["ytEmbed"]}`}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </center>
       <div className="subject__choose">
         {subjectData?.[lesson]?.["links"]?.map((lesson, ind) => {
           const [key, val] = Object.entries(lesson)[0];
@@ -76,9 +90,25 @@ function StudyLesson() {
         <Link
           to={"./quiz"}
           className="link"
-          style={{ width: "500px", textAlign: "center" }}
+          style={{
+            width: "170px",
+            textAlign: "center",
+            marginBottom: "100px",
+            fontSize: "20px",
+          }}
         >
-          <h3>Take a Quiz</h3>
+          <h3
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            Take a Quiz
+            <HiLightBulb
+              style={{ display: "inline", marginLeft: "2px", color: "#ffcb6b" }}
+            />
+          </h3>
         </Link>
       </center>
     </div>

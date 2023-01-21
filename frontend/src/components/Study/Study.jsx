@@ -59,7 +59,8 @@ function Study() {
         >
           study in{" "}
         </h2>
-        <button
+        <Link
+          to={"./6"}
           style={{
             position: "absolute",
             width: "400px",
@@ -70,10 +71,14 @@ function Study() {
             top: "950px",
             fontSize: "54px",
             color: "aliceblue",
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           Grade 6
-        </button>
+        </Link>
         <h2
           style={{
             position: "absolute",
@@ -81,11 +86,14 @@ function Study() {
             alignItems: "center",
             justifyContent: "center",
             top: "1400px",
+            textAlign: "center",
+            fontSize: "25px",
           }}
         >
           Believe you can and you're halfway there{" "}
         </h2>
-        <button
+        <Link
+          to={"./7"}
           style={{
             position: "absolute",
             width: "400px",
@@ -96,63 +104,83 @@ function Study() {
             top: "950px",
             fontSize: "54px",
             color: "aliceblue",
+
+            textDecoration: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           Grade 7
-        </button>
+        </Link>
         <h2
           style={{
             position: "absolute",
+            fontSize: "25px",
             right: "20px",
             alignItems: "center",
+            textAlign: "center",
             justifyContent: "center",
             top: "1400px",
           }}
         >
           Everyone fails at something, so don’t stop trying{" "}
         </h2>
-        <button
+        <Link
+          to={"./8"}
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
             background: "#0F111A",
+            textDecoration: "none",
             borderRadius: "40px",
             left: "130px",
             top: "1550px",
             fontSize: "54px",
             color: "aliceblue",
+
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           Grade 8
-        </button>
+        </Link>
         <h2
           style={{
             position: "absolute",
+            textAlign: "center",
             left: "20px",
             alignItems: "center",
             justifyContent: "center",
+            fontSize: "25px",
             top: "2000px",
           }}
         >
           {" "}
           Act as if what you do makes a difference. It does{" "}
         </h2>
-        <button
+        <Link
+          to={"./9"}
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
             background: "#0F111A",
             borderRadius: "40px",
+            textDecoration: "none",
             right: "150px",
             top: "1550px",
             fontSize: "54px",
             color: "aliceblue",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           Grade 9
-        </button>
+        </Link>
         <h2
           style={{
             position: "absolute",
@@ -160,6 +188,8 @@ function Study() {
             alignItems: "center",
             justifyContent: "center",
             top: "2000px",
+            fontSize: "25px",
+            textAlign: "center",
           }}
         >
           Believe you can and you're halfway there{" "}
