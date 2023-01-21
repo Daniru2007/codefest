@@ -64,3 +64,13 @@ dsd {
   height: 1500px;
   background-color: #090b10;
 }
+
+.grade {
+  background: #0f111a;
+  color: aliceblue;
+  transition: all 0.5s;
+}
+.grade:hover {
+  background: #1f2335;
+  color: rgb(175, 180, 184);
+}

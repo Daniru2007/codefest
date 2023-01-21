@@ -61,16 +61,15 @@ function Study() {
         </h2>
         <Link
           to={"./6"}
+          className="grade"
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
-            background: "#0F111A",
             borderRadius: "40px",
             left: "130px",
             top: "950px",
             fontSize: "54px",
-            color: "aliceblue",
             textDecoration: "none",
             display: "flex",
             alignItems: "center",
@@ -94,16 +93,15 @@ function Study() {
         </h2>
         <Link
           to={"./7"}
+          className="grade"
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
-            background: "#0F111A",
             borderRadius: "40px",
             right: "150px",
             top: "950px",
             fontSize: "54px",
-            color: "aliceblue",
 
             textDecoration: "none",
             display: "flex",
@@ -128,17 +126,16 @@ function Study() {
         </h2>
         <Link
           to={"./8"}
+          className="grade"
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
-            background: "#0F111A",
             textDecoration: "none",
             borderRadius: "40px",
             left: "130px",
             top: "1550px",
             fontSize: "54px",
-            color: "aliceblue",
 
             display: "flex",
             alignItems: "center",
@@ -163,17 +160,16 @@ function Study() {
         </h2>
         <Link
           to={"./9"}
+          className="grade"
           style={{
             position: "absolute",
             width: "400px",
             height: "400px",
-            background: "#0F111A",
             borderRadius: "40px",
             textDecoration: "none",
             right: "150px",
             top: "1550px",
             fontSize: "54px",
-            color: "aliceblue",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

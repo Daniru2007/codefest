@@ -66,7 +66,11 @@ function StudySubject() {
       <div className="subject__choose">
         {subjectData?.["lessons"]?.map((lesson, ind) => {
           return (
-            <Link to={`${ind + 1}`} className="subject__choose__item" key={ind}>
+            <Link
+              to={`${ind + 1}`}
+              className="subject__choose__item grade"
+              key={ind}
+            >
               {lesson}
             </Link>
           );

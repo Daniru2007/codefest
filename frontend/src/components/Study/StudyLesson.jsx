@@ -76,16 +76,7 @@ function StudyLesson() {
           allowfullscreen
         ></iframe>
       </center>
-      <div className="subject__choose">
-        {subjectData?.[lesson]?.["links"]?.map((lesson, ind) => {
-          const [key, val] = Object.entries(lesson)[0];
-          return (
-            <a href={`${val}`} className="subject__choose__item" key={ind}>
-              {key}
-            </a>
-          );
-        })}
-      </div>
+
       <center>
         <Link
           to={"./quiz"}
@@ -93,7 +84,7 @@ function StudyLesson() {
           style={{
             width: "170px",
             textAlign: "center",
-            marginBottom: "100px",
+            marginTop: "100px",
             fontSize: "20px",
           }}
         >
@@ -111,6 +102,20 @@ function StudyLesson() {
           </h3>
         </Link>
       </center>
+      <div className="subject__choose">
+        {subjectData?.[lesson]?.["links"]?.map((lesson, ind) => {
+          const [key, val] = Object.entries(lesson)[0];
+          return (
+            <a
+              href={`${val}`}
+              className="subject__choose__item grade"
+              key={ind}
+            >
+              {key}
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }

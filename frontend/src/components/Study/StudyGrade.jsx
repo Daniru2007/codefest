@@ -61,7 +61,7 @@ function StudyGrade() {
         {links.map((link) => {
           const [key, val] = Object.entries(link)[0];
           return (
-            <Link to={val} className="subject__choose__item" key={key}>
+            <Link to={val} className="subject__choose__item grade" key={key}>
               {key}
             </Link>
           );
