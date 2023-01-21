@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "json-server": "^0.17.1",
+    "marked": "^4.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-quiz-component": "^0.5.1",
     "react-router-dom": "^6.6.0",
     "react-tilty": "^2.0.3",
     "recharts": "^2.2.0"

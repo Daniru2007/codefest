@@ -11,6 +11,7 @@ import TimeManagement from "./components/TimeManagement/TimeManagement";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TimeProject from "./components/TimeManagement/TimeProject";
 import TimeProjectItem from "./components/TimeManagement/TimeProjectItem";
+import StudyQuiz from "./components/Study/StudyQuiz";
 
 function App() {
   // Setting Up the routes
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/study/:grade/:subject/:lesson"
             element={<StudyLesson />}
+          />
+          <Route
+            path="/study/:grade/:subject/:lesson/quiz"
+            element={<StudyQuiz />}
           />
           <Route path="/study" element={<Study />} />
           <Route path="/aboutus" element={<AboutUs />} />

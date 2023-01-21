@@ -1,0 +1,38 @@
+.project__quiz {
+  background-color: #0f111a;
+  min-height: 110vh;
+  height: max-content;
+  margin: 0px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-quiz-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-quiz-container > div > h2 {
+  min-width: 500px;
+  width: min-content;
+  text-align: center;
+}
+
+.project__quiz > * {
+  color: #82aaff;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body > h2 {
+  text-align: center;
+}

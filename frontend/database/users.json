@@ -83,12 +83,20 @@
           ],
           "quiz": [
             {
-              "q": "how are you?",
-              "1": "fine",
-              "2": "not good",
-              "3": "bad",
-              "4": "non of your business",
-              "correct": 4
+              "question": "How Are You?",
+              "questionType": "text",
+              "answerSelectionType": "single",
+              "answers": [
+                "I'm Good Thank you",
+                "Who are you?",
+                "Urgh fine",
+                "none of your business"
+              ],
+              "correctAnswer": "4",
+              "messageForCorrectAnswer": "Correct answer. Good job.",
+              "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+              "explanation": "You have to be pretty aggressive",
+              "point": "20"
             }
           ]
         }

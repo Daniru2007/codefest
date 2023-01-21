@@ -72,6 +72,15 @@ function StudyLesson() {
           );
         })}
       </div>
+      <center>
+        <Link
+          to={"./quiz"}
+          className="link"
+          style={{ width: "500px", textAlign: "center" }}
+        >
+          <h3>Take a Quiz</h3>
+        </Link>
+      </center>
     </div>
   );
 }

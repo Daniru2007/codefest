@@ -28,7 +28,6 @@ function StudySubject() {
   }, []);
   useEffect(() => {
     setSubjectData(data?.[grade]?.[subject]);
-    console.log(subjectData);
   }, [data]);
   return (
     <div className="study__subject">
