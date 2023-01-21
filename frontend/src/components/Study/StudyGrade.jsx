@@ -2,6 +2,7 @@ import React from "react";
 
 import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Navbar from "../Utils/Navbar";
 import "./StudyGrade.css";
 
 function StudyGrade() {
@@ -25,6 +26,7 @@ function StudyGrade() {
   ];
   return (
     <div className="study__main">
+      <Navbar />
       <div className="back__img">
         <h2>Study like you have never done before.</h2>
         <p

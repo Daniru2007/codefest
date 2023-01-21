@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
+import Navbar from "../Utils/Navbar";
 import "./StudySubject.css";
 import { useState } from "react";
 
@@ -31,6 +32,7 @@ function StudySubject() {
   }, [data]);
   return (
     <div className="study__subject">
+      <Navbar />
       <div className="back__img">
         <h2>Study like you have never done before.</h2>
         <p

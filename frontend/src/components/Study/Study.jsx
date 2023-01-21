@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 
 import "./Study.css";
+import Navbar from "../Utils/Navbar";
 
 function Study() {
-  // TODO (TiraWeb & @faahir): html code comes after the return statement
   return (
     <div className="study__main">
+      <Navbar />
       <div className="topback">
         <h2>Start your learning journey from here</h2>
         <p
