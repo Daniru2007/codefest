@@ -6,27 +6,6 @@
       "password": "password123",
       "projects": [
         {
-          "name": "test",
-          "days": "10",
-          "time": [
-            "1",
-            "30"
-          ],
-          "subjects": [
-            {
-              "name": "science",
-              "val": 21,
-              "time": "4.3"
-            },
-            {
-              "name": "maths",
-              "val": 53,
-              "time": "10.7"
-            }
-          ],
-          "id": 1
-        },
-        {
           "name": "exam",
           "days": "14",
           "time": [
@@ -51,6 +30,58 @@
             }
           ],
           "id": 2
+        },
+        {
+          "name": "General Quiz",
+          "days": "14",
+          "time": [
+            "2",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "science",
+              "val": 88,
+              "time": "18.7"
+            },
+            {
+              "name": "sinhala",
+              "val": 24,
+              "time": "5.1"
+            },
+            {
+              "name": "maths",
+              "val": 53,
+              "time": "11.2"
+            }
+          ],
+          "id": 2
+        },
+        {
+          "name": "ICT Exam",
+          "days": "5",
+          "time": [
+            "2",
+            "40"
+          ],
+          "subjects": [
+            {
+              "name": "Binary",
+              "val": 77,
+              "time": "6.1"
+            },
+            {
+              "name": "Logic Gates",
+              "val": 42,
+              "time": "3.4"
+            },
+            {
+              "name": "Normal IT",
+              "val": 48,
+              "time": "3.8"
+            }
+          ],
+          "id": 3
         }
       ]
     }
@@ -58,14 +89,6 @@
   "content": {
     "6": {
       "science": {
-        "lessons": [
-          "lesson 1",
-          "lesson 2",
-          "lesson 3",
-          "lesson 4",
-          "lesson 5",
-          "lesson 6"
-        ],
         "1": {
           "ytEmbed": "https://www.youtube.com/embed/EjsPI01FZ4c",
           "links": [
@@ -100,7 +123,15 @@
               "point": "20"
             }
           ]
-        }
+        },
+        "lessons": [
+          "lesson 1",
+          "lesson 2",
+          "lesson 3",
+          "lesson 4",
+          "lesson 5",
+          "lesson 6"
+        ]
       }
     }
   }
