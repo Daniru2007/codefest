@@ -111,6 +111,7 @@ function StudyLesson() {
             <a
               href={`${val}`}
               className="subject__choose__item grade"
+              target={"_blank"}
               key={ind}
             >
               {key}

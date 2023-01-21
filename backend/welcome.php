@@ -11,7 +11,6 @@
 
     if (mysqli_num_rows($query) > 0) {
         $row = mysqli_fetch_assoc($query);
-
-        echo "Welcome bitch fuck you as you like so welcome  " . $row['name'] . " <a href='logout.php'>Logout</a>";
+        header("Location: http://localhost:5173/%22");
     }
 ?>

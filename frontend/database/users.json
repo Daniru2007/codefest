@@ -93,7 +93,7 @@
           "ytEmbed": "https://www.youtube.com/embed/EjsPI01FZ4c",
           "links": [
             {
-              "youtube": "https://www.youtube.com"
+              "Text Book": "http://www.edupub.gov.lk/Administrator/English/6/science%20G-6%20%20E/science%20G-6%20E.pdf"
             },
             {
               "youtube": "https://www.youtube.com"
@@ -107,14 +107,62 @@
           ],
           "quiz": [
             {
-              "question": "How Are You?",
+              "question": "The answer which contains only non living things is,",
               "questionType": "text",
               "answerSelectionType": "single",
               "answers": [
-                "I'm Good Thank you",
-                "Who are you?",
-                "Urgh fine",
-                "none of your business"
+                "Child, coconut tree, brick",
+                "Brick, pen, eraser",
+                "Water, bicycle, parrot",
+                "Coconut tree, mango tree, long beans creeper"
+              ],
+              "correctAnswer": "4",
+              "messageForCorrectAnswer": "Correct answer. Good job.",
+              "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+              "explanation": "You have to be pretty aggressive",
+              "point": "20"
+            },
+            {
+              "question": "Which water is most suitable to remove dirt in clothes well,",
+              "questionType": "text",
+              "answerSelectionType": "single",
+              "answers": [
+                "Well water",
+                "River water",
+                "Sea water",
+                "Rain water"
+              ],
+              "correctAnswer": "4",
+              "messageForCorrectAnswer": "Correct answer. Good job.",
+              "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+              "explanation": "You have to be pretty aggressive",
+              "point": "20"
+            },
+            {
+              "question": "Most number of organisms which can be seen at once by a hand lens is,",
+              "questionType": "text",
+              "answerSelectionType": "single",
+              "answers": [
+                "Crickets",
+                "Millipedes",
+                "Termites",
+                "Snails"
+              ],
+              "correctAnswer": "4",
+              "messageForCorrectAnswer": "Correct answer. Good job.",
+              "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+              "explanation": "You have to be pretty aggressive",
+              "point": "20"
+            },
+            {
+              "question": "The answer which contains a plant, an animal and a micro - organism respectively is,",
+              "questionType": "text",
+              "answerSelectionType": "single",
+              "answers": [
+                "Banana, beetle, termite",
+                "Lotus, toad, bacteria",
+                "Termite, bacteria, banana",
+                "Banana, toad, termite"
               ],
               "correctAnswer": "4",
               "messageForCorrectAnswer": "Correct answer. Good job.",
