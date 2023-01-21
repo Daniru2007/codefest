@@ -11,7 +11,16 @@ function HomeDisplay({ setCursorOnLinks }) {
           <Tilty className="content study">
             <div className="img__back"></div>
             <div className="description">
-              <h2>Study</h2>
+              <h2
+                style={{
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                  width: "min-content",
+                  fontSize: "24px",
+                }}
+              >
+                Study
+              </h2>
               <p>
                 On our website, you will find a variety of resources to help you
                 succeed in your studies.
@@ -22,7 +31,16 @@ function HomeDisplay({ setCursorOnLinks }) {
           <Tilty className="content time">
             <div className="img__back"></div>
             <div className="description">
-              <h2>Time Management</h2>
+              <h2
+                style={{
+                  marginLeft: "0px",
+                  marginRight: "0px",
+                  width: "min-content",
+                  fontSize: "24px",
+                }}
+              >
+                Time Management
+              </h2>
 
               <p>
                 We provide a variety of tools to help you with your time

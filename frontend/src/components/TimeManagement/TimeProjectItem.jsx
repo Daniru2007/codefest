@@ -278,13 +278,28 @@ function TimeProjectItem() {
         <BsArrowLeftCircleFill className="back__button" />
       </Link>
       <div className="details">
-        <h1 className="projectItem__name">{project?.["name"]}</h1>
-        <h2 className="projectItem__days">Days: {project?.["days"]}</h2>
-        <h2 className="projectItem__time">
+        <h1 className="projectItem__name" style={{ fontSize: "40px" }}>
+          {project?.["name"]}
+        </h1>
+        <h2
+          className="projectItem__days"
+          style={{ fontSize: "30px", marginLeft: "0px", marginRight: "0px" }}
+        >
+          Days: {project?.["days"]}
+        </h2>
+        <h2
+          className="projectItem__time"
+          style={{ fontSize: "30px", marginLeft: "0px", marginRight: "0px" }}
+        >
           hours: {project?.["time"]?.[0]} minutes: {project?.["time"]?.[1]}
         </h2>
         <br />
-        <h2 className="projectItem__difficulty">Difficulty</h2>
+        <h2
+          className="projectItem__difficulty"
+          style={{ fontSize: "30px", marginLeft: "0px", marginRight: "0px" }}
+        >
+          Difficulty
+        </h2>
         {project?.["subjects"]?.map((subject) => {
           const key = project.subjects.indexOf(subject);
           return (
