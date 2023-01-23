@@ -5,7 +5,7 @@ import Navbar from "../Utils/Navbar";
 import "./StudySubject.css";
 import { useState } from "react";
 
-function StudySubject() {
+function StudySubject({ userId }) {
   const { grade } = useParams();
   const { subject } = useParams();
   const [data, setData] = useState({});

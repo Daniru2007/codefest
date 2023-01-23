@@ -8,7 +8,7 @@ import { BsArrowLeftCircleFill } from "react-icons/bs";
 
 import "./StudyQuiz.css";
 
-function StudyQuiz() {
+function StudyQuiz({ userId }) {
   const { grade } = useParams();
   const { subject } = useParams();
   const { lesson } = useParams();

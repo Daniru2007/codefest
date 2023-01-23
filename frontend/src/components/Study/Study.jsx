@@ -5,7 +5,7 @@ import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 import "./Study.css";
 import Navbar from "../Utils/Navbar";
 
-function Study() {
+function Study({ userId }) {
   return (
     <div className="study__main">
       <Navbar />

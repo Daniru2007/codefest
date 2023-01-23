@@ -18,8 +18,7 @@ import { AiFillPauseCircle } from "react-icons/ai";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 
-function TimeProjectItem() {
-  const userId = 1;
+function TimeProjectItem({ userId }) {
   const { id } = useParams();
 
   const [chartData, setChartData] = useState([]);

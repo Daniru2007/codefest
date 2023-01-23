@@ -4,9 +4,8 @@ import { BsFillPlusSquareFill } from "react-icons/bs";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "./TimeProject.css";
 
-function TimeProject() {
+function TimeProject({ userId }) {
   let navigate = useNavigate();
-  const userId = 1;
   const [data, setData] = useState({});
   const [projectInfo, setProjectInfo] = useState({
     name: "exam",

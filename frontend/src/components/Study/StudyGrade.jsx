@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Utils/Navbar";
 import "./StudyGrade.css";
 
-function StudyGrade() {
+function StudyGrade({ userId }) {
   const links = [
     { science: "science" },
     { maths: "maths" },

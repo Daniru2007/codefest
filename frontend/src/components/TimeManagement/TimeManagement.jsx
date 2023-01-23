@@ -6,8 +6,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "./TimeManagement.css";
 
-function TimeManagement() {
-  const userId = 1;
+function TimeManagement({ userId }) {
   // store the data
   const [data, setData] = useState({});
   const [changed, setChanged] = useState(true);

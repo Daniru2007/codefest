@@ -6,7 +6,7 @@ import { useState } from "react";
 import Navbar from "../Utils/Navbar";
 import "./StudyLesson.css";
 
-function StudyLesson() {
+function StudyLesson({ userId }) {
   const { grade } = useParams();
   const { subject } = useParams();
   const { lesson } = useParams();
