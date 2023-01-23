@@ -18,9 +18,13 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import TimeProject from "./components/TimeManagement/TimeProject";
 import TimeProjectItem from "./components/TimeManagement/TimeProjectItem";
 import StudyQuiz from "./components/Study/StudyQuiz";
+import NewsFeed from "./components/NewsFeed/NewsFeed";
 
 function App() {
   const [userId, setUserId] = useState(0);
+  useEffect(() => {
+    setUserId(JSON.parse(localStorage.getItem("userId")));
+  }, []);
   // Setting Up the routes
   return (
     <div className="App">
@@ -70,6 +74,7 @@ function App() {
             path="time/project/:id"
             element={<TimeProjectItem userId={userId} />}
           />
+          <Route path="news" element={<NewsFeed userId={userId} />} />
         </Routes>
       </Router>
     </div>

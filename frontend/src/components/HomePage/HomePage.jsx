@@ -10,7 +10,10 @@ import HomeDisplay from "./HomeDisplay";
 function HomePage({ userId, setUserId }) {
   const { id } = useParams();
   useEffect(() => {
-    setUserId(id);
+    if (id) {
+      localStorage.setItem("userId", JSON.stringify(id));
+      setUserId(id);
+    }
   }, []);
   return (
     <div className="home-page">
