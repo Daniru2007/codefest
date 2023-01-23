@@ -6,6 +6,7 @@
     if (isset($_SESSION['SESSION_EMAIL'])) {
         $email = $_POST["email"];
         $_SESSION['otp'] = $otp;
+        $_SESSION['uniqueid'] = $uniqueid;
         $_SESSION['mail'] = $email;
         $password = $_POST["password"];
         header("Location: welcome.php");
@@ -18,6 +19,7 @@
 
     if (isset($_POST['submit'])) {
         $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $uniqueid = rand(111111,999999);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, md5($_POST['password']));
         $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm-password']));
@@ -28,7 +30,7 @@
             $msg = "<div class='alert alert-danger'>{$email} - This email address has been already exists.</div>";
         } else {
             if ($password === $confirm_password) {
-                $sql = "INSERT INTO users (name, email, password, code) VALUES ('{$name}', '{$email}', '{$password}', '{$code}')";
+                $sql = "INSERT INTO users ( uniqueid , name, email, password, code) VALUES ('{$uniqueid}','{$name}', '{$email}', '{$password}', '{$code}')";
                 $result = mysqli_query($conn, $sql);
 
                 if ($result) {

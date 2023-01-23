@@ -12,29 +12,24 @@ include 'config.php';
 $msg = "";
 if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $otp = mysqli_real_escape_string($conn, md5(rand()));
+    $code = mysqli_real_escape_string($conn, md5(rand()));
     if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
-        $query = mysqli_query($conn, "UPDATE users SET otp='{$otp}' WHERE email='{$email}'");
+        $query = mysqli_query($conn, "UPDATE users SET code='{$code}' WHERE email='{$email}'");
         if ($query) {        
             echo "<div style='display: none;'>";
             $mail = new PHPMailer(true);
             try {
-                //Server settings
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'rockyio207nethnu@gmail.com';                     //SMTP username
-                $mail->Password   = 'yqjiwzdmrmrcdrww';                               //SMTP password
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                //Recipients
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;          
+                $mail->isSMTP();                                          
+                $mail->Host       = 'smtp.gmail.com';  
+                $mail->SMTPAuth   = true;              
+                $mail->Username   = 'rockyio207nethnu@gmail.com';    
+                $mail->Password   = 'yqjiwzdmrmrcdrww';                       
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        
+                $mail->Port       = 465;                              
                 $mail->setFrom('rockyio207nethnu@gmail.com');
                 $mail->addAddress($email);
-
-                //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->isHTML(true);                
                 $mail->Subject = 'no reply';
                 $mail->Body    = 'Here is the verification link <b><a href="http://localhost/login/change-password.php?reset='.$code.'">http://localhost/login/change-password.php?reset='.$code.'</a></b>';
 
@@ -53,15 +48,19 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Verify Account</title>
     <link rel="stylesheet" href="lol.css" type="text/css" media="all" />
 </head>
 <body>
 <div class="login-box">
-             <h2>Login</h2>
-                   <form>
+<section class="w3l-mockup-form">
+        <div class="container">
+                <div class="main-mockup">
+                    <div class="">
+                        <span class=""></span>
+                    </div>
+                    </div>
                         <h2>Forgot Password</h2>
                         <p>OOPS! dont worry we got this </p>
                         <?php echo $msg; ?>

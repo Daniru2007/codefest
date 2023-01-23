@@ -1,6 +1,10 @@
 html {
   height: 100%;
 }
+
+#user-box input[type="password"],
+#user-box input[type="text"],
+
 body {
   margin:0;
   padding:0;
@@ -174,3 +178,47 @@ body {
     bottom: 100%;
   }
 }
+.eye {
+  position: absolute;
+}
+
+.alert {    
+  padding: 1rem;
+  border-radius: 5px;
+  color: white;
+  margin: 1rem 0;
+}
+
+.alert-success {
+  background-color: #42ba96;
+}
+
+.alert-danger {
+  background-color: #ff0000;
+}
+
+.alert-info {
+  background-color: #0084ff;
+}
+
+.alert-warning {
+  background-color: #ff6666;
+}
+input {
+	display: block;
+	border: 2px solid #ccc;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+
+.fa-eye {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 50%;
+  cursor: pointer;
+}
+
