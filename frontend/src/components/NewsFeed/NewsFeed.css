@@ -1,0 +1,35 @@
+.news {
+  background-color: #0f111a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.news__item {
+  background-color: #090b10;
+  color: white;
+  min-width: 600px;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 10px;
+  width: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.news__item > a {
+  color: #4b526d;
+  text-decoration: none;
+}
+
+.news__item > p {
+  color: rgb(175, 175, 175);
+}
+
+.news__item > img {
+  width: 90%;
+  display: block;
+  margin: 5px;
+}
