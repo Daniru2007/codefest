@@ -9,29 +9,9 @@ import { useState } from "react";
 function StudySubject({ userId }) {
   const { grade } = useParams();
   const { subject } = useParams();
-  const [data, setData] = useState({});
-  const [subjectData, setSubjectData] = useState({});
+
   let links = [];
 
-  const fetchJson = () => {
-    fetch(`http://localhost:3000/content`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((tempData) => {
-        setData(tempData);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    // fetchJson();
-    setData(content);
-  }, []);
-  useEffect(() => {
-    setSubjectData(data?.[grade]?.[subject]);
-  }, [data]);
   return (
     <div className="study__subject">
       <Navbar />
@@ -68,7 +48,7 @@ function StudySubject({ userId }) {
       </div>
       <div className="topper"></div>
       <div className="subject__choose">
-        {subjectData?.["lessons"]?.map((lesson, ind) => {
+        {content[grade][subject]["lessons"].map((lesson, ind) => {
           return (
             <Link
               to={`${ind + 1}`}

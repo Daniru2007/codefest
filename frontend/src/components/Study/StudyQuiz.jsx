@@ -14,33 +14,21 @@ function StudyQuiz({ userId }) {
   const { subject } = useParams();
   const { lesson } = useParams();
 
-  const [data, setData] = useState({});
-  const [subjectData, setSubjectData] = useState({});
+  let tempContent = content[grade][subject][lesson]["quiz"];
+  for (let i = 0; i < tempContent.length; i++) {
+    tempContent[i]["point"] = 10;
+    tempContent[i]["questionType"] = "text";
+    tempContent[i]["answerSelectionType"] = "single";
+    tempContent[i]["messageForCorrectAnswer"] = "Correct answer. Good job.";
+    tempContent[i]["messageForIncorrectAnswer"] =
+      "Incorrect answer. Please try again.";
+  }
   let quiz = {
     quizTitle: `Answer those ${subject} questions in lesson ${lesson}`,
     nrOfQuestions: "4",
-    questions: subjectData?.[lesson]?.["quiz"],
+    questions: tempContent,
   };
 
-  const fetchJson = () => {
-    fetch(`http://localhost:3000/content`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((tempData) => {
-        setData(tempData);
-        setSubjectData(tempData?.[grade]?.[subject]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    // fetchJson();
-    setData(content);
-    setSubjectData(content[grade][subject]);
-  }, []);
-  useEffect(() => {}, [data]);
   return (
     <div className="project__quiz">
       <Link to={`../study/${grade}/${subject}/${lesson}`}>

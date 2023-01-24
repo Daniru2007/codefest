@@ -11,28 +11,7 @@ function StudyLesson({ userId }) {
   const { grade } = useParams();
   const { subject } = useParams();
   const { lesson } = useParams();
-  const [data, setData] = useState({});
-  const [subjectData, setSubjectData] = useState({});
 
-  const fetchJson = () => {
-    fetch(`http://localhost:3000/content`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((tempData) => {
-        setData(tempData);
-        setSubjectData(tempData?.[grade]?.[subject]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    // fetchJson();
-    setData(content);
-    setSubjectData(content[grade][subject]);
-  }, []);
-  useEffect(() => {}, [data]);
   return (
     <div className="study__subject">
       <Navbar />
@@ -74,7 +53,7 @@ function StudyLesson({ userId }) {
           style={{ borderRadius: "10px", marginTop: "80px" }}
           width="560"
           height="315"
-          src={`${subjectData[lesson]?.["ytEmbed"]}`}
+          src={`${content[grade][subject][lesson]["ytEmbed"]}`}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -108,7 +87,7 @@ function StudyLesson({ userId }) {
         </Link>
       </center>
       <div className="subject__choose">
-        {subjectData?.[lesson]?.["links"]?.map((lesson, ind) => {
+        {content[grade][subject][lesson]["links"].map((lesson, ind) => {
           const [key, val] = Object.entries(lesson)[0];
           return (
             <a
