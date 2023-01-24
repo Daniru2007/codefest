@@ -69,6 +69,10 @@
   background-image: url(../../assets/time.jpg);
 }
 
+.news__link > .img__back {
+  background-position: center;
+  background-image: url(../../assets/news.jpg);
+}
 @media only screen and (max-width: 920px) {
   .contents {
     flex-direction: column;

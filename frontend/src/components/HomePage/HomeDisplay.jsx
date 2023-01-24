@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Tilty from "react-tilty";
 import "./HomeDisplay.css";
 
@@ -8,46 +9,73 @@ function HomeDisplay({ setCursorOnLinks }) {
       <div className="home-display__contents">
         <h1 className="home-display__content__title">What Do we Have?</h1>
         <div className="contents">
-          <Tilty className="content study">
-            <div className="img__back"></div>
-            <div className="description">
-              <h2
-                style={{
-                  marginLeft: "0px",
-                  marginRight: "0px",
-                  width: "min-content",
-                  fontSize: "24px",
-                }}
-              >
-                Study
-              </h2>
-              <p>
-                On our website, you will find a variety of resources to help you
-                succeed in your studies.
-              </p>
-            </div>
-          </Tilty>
+          <Link
+            to={"/study"}
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <Tilty className="content study">
+              <div className="img__back"></div>
+              <div className="description">
+                <h2
+                  style={{
+                    marginLeft: "0px",
+                    marginRight: "0px",
+                    width: "min-content",
+                    fontSize: "24px",
+                  }}
+                >
+                  Study
+                </h2>
+                <p>
+                  On our website, you will find a variety of resources to help
+                  you succeed in your studies.
+                </p>
+              </div>
+            </Tilty>
+          </Link>
 
-          <Tilty className="content time">
-            <div className="img__back"></div>
-            <div className="description">
-              <h2
-                style={{
-                  marginLeft: "0px",
-                  marginRight: "0px",
-                  width: "min-content",
-                  fontSize: "24px",
-                }}
-              >
-                Time Management
-              </h2>
+          <Link to={"/time"} style={{ color: "white", textDecoration: "none" }}>
+            <Tilty className="content time">
+              <div className="img__back"></div>
+              <div className="description">
+                <h2
+                  style={{
+                    marginLeft: "0px",
+                    marginRight: "0px",
+                    width: "min-content",
+                    fontSize: "24px",
+                  }}
+                >
+                  Time Management
+                </h2>
 
-              <p>
-                We provide a variety of tools to help you with your time
-                management.
-              </p>
-            </div>
-          </Tilty>
+                <p>
+                  We provide a variety of tools to help you with your time
+                  management.
+                </p>
+              </div>
+            </Tilty>
+          </Link>
+
+          <Link to={"/news"} style={{ color: "white", textDecoration: "none" }}>
+            <Tilty className="content time news__link">
+              <div className="img__back"></div>
+              <div className="description">
+                <h2
+                  style={{
+                    marginLeft: "0px",
+                    marginRight: "0px",
+                    width: "min-content",
+                    fontSize: "24px",
+                  }}
+                >
+                  News Feed
+                </h2>
+
+                <p>Check out our news feed to know about the world</p>
+              </div>
+            </Tilty>
+          </Link>
         </div>
       </div>
       <div className="home-display__benefits">

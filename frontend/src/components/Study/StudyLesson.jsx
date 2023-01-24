@@ -4,6 +4,7 @@ import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 import { HiLightBulb } from "react-icons/hi";
 import { useState } from "react";
 import Navbar from "../Utils/Navbar";
+import content from "./StudyContent";
 import "./StudyLesson.css";
 
 function StudyLesson({ userId }) {
@@ -27,7 +28,9 @@ function StudyLesson({ userId }) {
       });
   };
   useEffect(() => {
-    fetchJson();
+    // fetchJson();
+    setData(content);
+    setSubjectData(content[grade][subject]);
   }, []);
   useEffect(() => {}, [data]);
   return (

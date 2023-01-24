@@ -17,7 +17,7 @@ function HomeMain() {
       </p>
       <a href="http://localhost/3/index.php" className="link home-main__link">
         <h3>Let's Connect</h3>
-        <BsFillArrowRightCircleFill className="linkicon" />
+        <BsFillArrowRightCircleFill className="link__icon" />
       </a>
     </div>
   );

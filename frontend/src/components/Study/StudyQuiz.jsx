@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { BsArrowLeftCircleFill } from "react-icons/bs";
 
+import content from "./StudyContent";
 import "./StudyQuiz.css";
 
 function StudyQuiz({ userId }) {
@@ -35,7 +36,9 @@ function StudyQuiz({ userId }) {
       });
   };
   useEffect(() => {
-    fetchJson();
+    // fetchJson();
+    setData(content);
+    setSubjectData(content[grade][subject]);
   }, []);
   useEffect(() => {}, [data]);
   return (

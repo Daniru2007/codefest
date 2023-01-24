@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { BsFillArrowRightCircleFill, BsArrowRightCircle } from "react-icons/bs";
 import Navbar from "../Utils/Navbar";
+import content from "./StudyContent";
 import "./StudySubject.css";
 import { useState } from "react";
 
@@ -25,7 +26,8 @@ function StudySubject({ userId }) {
       });
   };
   useEffect(() => {
-    fetchJson();
+    // fetchJson();
+    setData(content);
   }, []);
   useEffect(() => {
     setSubjectData(data?.[grade]?.[subject]);
