@@ -14,8 +14,8 @@
 
 .progressbar {
   position: relative;
-  width: max-content;
-  height: max-content;
+  width: 50%;
+  height: 30px;
 }
 
 .progressbar__red {
@@ -91,4 +91,18 @@
 
 .back__button:hover {
   color: rgba(255, 255, 255, 0.705);
+}
+
+.pie-chart {
+  width: 50vw;
+  height: 50vh;
+}
+@media only screen and (max-width: 940px) {
+  .projectItem {
+    flex-direction: column;
+  }
+  .pie-chart {
+    width: 100vw;
+    height: 50vh;
+  }
 }

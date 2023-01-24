@@ -17,52 +17,31 @@
   background-position: right;
   background-size: cover;
 }
-
-psdsad {
-  color: rgb(255, 255, 255);
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 1px;
-  max-width: 555px;
-  width: 350px;
+.subject__choose {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  min-height: 100vh;
+  height: max-content;
 }
 
-h2 {
-  color: rgb(255, 255, 255);
-  margin-left: 30px;
-  margin-right: 30px;
-  max-width: 755px;
-  width: 550px;
-  font-size: 40px;
+.subject__choose__item {
+  background-color: #0f111a;
+  color: white;
+  font-size: 30px;
+  padding: 20px 100px;
+  width: min-content;
+  height: min-content;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-decoration: none;
+  margin: 50px 0px;
 }
 
-dsd {
-  position: absolute;
-  width: 120px;
-  height: 30px;
-  left: 20px;
-  top: 380px;
-
-  background: #d9d9d9;
-  border-radius: 60px;
-}
-
-.topper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  height: 100px;
-  width: 100%;
-  background-image: url("../../assets/lol.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: cover;
-}
-
-.fullbody {
-  height: 1500px;
-  background-color: #090b10;
+@media only screen and (max-width: 700px) {
+  .subject__choose {
+    grid-template-columns: 100%;
+  }
 }
 
 .subject__choose {
@@ -84,4 +63,38 @@ dsd {
   white-space: nowrap;
   text-decoration: none;
   margin: 50px 0px;
+}
+
+@media only screen and (max-width: 650px) {
+  .subject__choose {
+    grid-template-columns: 100%;
+  }
+}
+
+.yt-vid {
+  border-radius: 10px;
+  margin-top: 80px;
+  width: 560px;
+  height: 315px;
+}
+
+@media only screen and (max-width: 585px) {
+  .yt-vid {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .yt-vid {
+    width: 350px;
+    height: 196px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .yt-vid {
+    width: 280px;
+    height: 157px;
+  }
 }

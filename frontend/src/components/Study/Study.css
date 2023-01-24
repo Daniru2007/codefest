@@ -4,13 +4,12 @@
   font-family: sans-serif;
   background: #090b10;
 }
-.topback {
+.study__main__back {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
-  height: 80vh;
-  width: 98vw;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
   background-attachment: fixed;
   background-image: url("../../assets/background.jpg");
   background-repeat: no-repeat;
@@ -18,59 +17,103 @@
   background-size: cover;
 }
 
-psdsad {
-  color: rgb(255, 255, 255);
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 1px;
-  max-width: 555px;
-  width: 350px;
+.study__main__back > h1 {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 600px;
+  font-size: 50px;
+}
+.study__main__back > p {
+  color: #cbd0e0;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 400px;
 }
 
-h2 {
-  color: rgb(255, 255, 255);
-  margin-left: 30px;
-  margin-right: 30px;
-  max-width: 755px;
-  width: 550px;
-  font-size: 40px;
+.study__main__back > a {
+  width: max-content;
+  margin-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-dsd {
-  position: absolute;
-  width: 120px;
-  height: 30px;
-  left: 20px;
-  top: 380px;
-
-  background: #d9d9d9;
-  border-radius: 60px;
+.study__badge {
+  background-color: #717cb4;
+  min-height: 125px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.topper {
+.study__badge__item {
+  color: white;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+}
+
+.study__badge__item > svg {
+  width: 60px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 610px) {
+  .study__badge {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .study__main__back > h1 {
+    font-size: 40px;
+  }
+}
+
+.study__grades {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  /* color: rgb(199, 198, 198); */
+}
+
+.study__grades__item {
+  background-color: #0f111a;
+  color: white;
+  width: max-content;
+  display: flex;
   flex-direction: column;
-  height: 100px;
-  width: 100%;
-  background-image: url("../../assets/lol.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: cover;
-}
-
-.fullbody {
-  height: 1500px;
-  background-color: #090b10;
-}
-
-.grade {
-  background: #0f111a;
-  color: aliceblue;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  text-decoration: none;
   transition: all 0.5s;
 }
-.grade:hover {
-  background: #1f2335;
-  color: rgb(175, 180, 184);
+
+.study__grades__item:hover {
+  background-color: #2e334b;
+  color: white;
+}
+
+.study__grades__item > h1 {
+  font-size: 100px;
+  margin: 0px 20px;
+}
+
+.study__grades__item > h3 {
+  font-size: 50px;
+  margin: 0px 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .study__grades {
+    grid-template-columns: 100%;
+  }
 }

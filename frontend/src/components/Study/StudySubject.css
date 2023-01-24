@@ -1,0 +1,132 @@
+.study__subject {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #090b10;
+}
+.study__subject__back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-image: url("../../assets/laptop.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.study__subject__back > h1 {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 600px;
+  font-size: 50px;
+}
+.study__subject__back > p {
+  color: #cbd0e0;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 400px;
+}
+
+.study__subject__back > a {
+  width: max-content;
+  margin-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.study__badge {
+  background-color: #717cb4;
+  min-height: 125px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.study__badge__item {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.study__badge__item > svg {
+  width: 60px;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 610px) {
+  .study__badge {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .study__subject__back > h1 {
+    font-size: 40px;
+  }
+}
+
+.study__grades {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  /* color: rgb(199, 198, 198); */
+}
+
+.study__grades__item {
+  background-color: #0f111a;
+  color: white;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.study__grades__item:hover {
+  background-color: #2e334b;
+  color: white;
+}
+
+.study__grades__item > h1 {
+  font-size: 100px;
+  margin: 0px 20px;
+}
+
+.study__grades__item > h3 {
+  font-size: 50px;
+  margin: 0px 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .study__grades {
+    grid-template-columns: 100%;
+  }
+}
+.study__subject__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.term {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

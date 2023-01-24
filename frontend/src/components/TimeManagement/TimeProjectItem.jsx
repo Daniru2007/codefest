@@ -342,7 +342,7 @@ function TimeProjectItem({ userId }) {
           ></div>
         </div> */}
 
-        <div style={{ width: "50vw", height: "50vh" }}>
+        <div className="pie-chart">
           <ResponsiveContainer>
             <PieChart width={730} height={500}>
               <Pie
@@ -365,8 +365,8 @@ function TimeProjectItem({ userId }) {
           value={progress[0]}
           min={0}
           max={progress[1]}
+          className="progressbar"
           onChange={onSubjectValueChange}
-          style={{ width: "600px", height: "30px" }}
         />
         <h1 style={{ color: "#717cb4" }}>
           {time[0].toLocaleString("en-US", { minimumIntegerDigits: 2 })}:

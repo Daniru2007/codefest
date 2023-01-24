@@ -21,7 +21,9 @@ import StudyQuiz from "./components/Study/StudyQuiz";
 import NewsFeed from "./components/NewsFeed/NewsFeed";
 
 function App() {
-  const [userId, setUserId] = useState(0);
+  const [userId, setUserId] = useState(
+    JSON.parse(localStorage.getItem("userId"))
+  );
   useEffect(() => {
     setUserId(JSON.parse(localStorage.getItem("userId")));
   }, []);

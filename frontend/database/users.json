@@ -80,12 +80,76 @@
             }
           ],
           "id": 3
+        },
+        {
+          "name": "exam",
+          "days": "1",
+          "time": [
+            "0",
+            "15"
+          ],
+          "subjects": [
+            {
+              "name": "subject",
+              "val": 27,
+              "time": "0.2"
+            },
+            {
+              "name": "new subject",
+              "val": 16,
+              "time": "0.1"
+            }
+          ],
+          "id": 4
         }
       ]
     },
     {
       "id": 2,
-      "projects": []
+      "projects": [
+        {
+          "name": "exam",
+          "days": "1",
+          "time": [
+            "1",
+            "30"
+          ],
+          "subjects": [
+            {
+              "name": "subject",
+              "val": 46,
+              "time": "1.0"
+            },
+            {
+              "name": "new subject",
+              "val": 24,
+              "time": "0.5"
+            }
+          ],
+          "id": 1
+        },
+        {
+          "name": "test",
+          "days": "1",
+          "time": [
+            "0",
+            "15"
+          ],
+          "subjects": [
+            {
+              "name": "subject",
+              "val": 67,
+              "time": "0.2"
+            },
+            {
+              "name": "subject 1",
+              "val": 38,
+              "time": "0.1"
+            }
+          ],
+          "id": 2
+        }
+      ]
     },
     {
       "id": 3,

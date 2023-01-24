@@ -20,6 +20,7 @@
   min-width: 500px;
   width: min-content;
   text-align: center;
+  white-space: normal;
 }
 
 .project__quiz > * {
