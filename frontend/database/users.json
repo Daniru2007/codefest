@@ -92,7 +92,7 @@
             {
               "name": "subject",
               "val": 27,
-              "time": "0.2"
+              "time": 0.18333333333333332
             },
             {
               "name": "new subject",
@@ -101,6 +101,22 @@
             }
           ],
           "id": 4
+        },
+        {
+          "name": "exam",
+          "days": 0,
+          "time": [
+            0,
+            0
+          ],
+          "subjects": [
+            {
+              "name": "subject",
+              "val": 0,
+              "time": 0
+            }
+          ],
+          "id": 6
         }
       ]
     },

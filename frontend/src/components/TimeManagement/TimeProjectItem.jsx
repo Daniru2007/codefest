@@ -175,6 +175,13 @@ function TimeProjectItem({ userId }) {
   };
 
   useEffect(() => {
+    const timeout = setInterval(() => {
+      saveData();
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [project]);
+
+  useEffect(() => {
     let subjects = [...project["subjects"]];
     let sum = 0;
     let chartDataTemp = [];
@@ -233,7 +240,8 @@ function TimeProjectItem({ userId }) {
   useEffect(() => {
     let hours = 0;
     let minutes = 0;
-    if (!stop && !(time[0] === 0)) {
+    if (!time[0] && !time[1] && !time[2]) return;
+    if (!stop) {
       let timeout = setInterval(() => {
         if (time[2] <= 0) {
           if (time[1] <= 0) {
