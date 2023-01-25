@@ -10,13 +10,17 @@ function NewsFeed(userId) {
   const [data, setData] = useState([]);
   const [fetched, changeFetch] = useState(false);
   useEffect(() => {
-    fetch(
-      "https://newsapi.org/v2/everything?q=educational+for+kids&from=2022-12-23&sortBy=publishedAt&apiKey=aae5b1de3d1a4775b4f71d76940fa38d"
-    )
+    fetch("https://api.newscatcherapi.com/v2/search?q=kids+educational", {
+      method: "GET",
+      headers: {
+        "x-api-key": "GDg9gfg_5A5cfcXygLOmWJiTD2xwuOHX31Nh6L0SjTs",
+      },
+    })
       .then((jsonObj) => {
         return jsonObj.json();
       })
       .then((tempData) => {
+        console.log(tempData);
         setData(tempData.articles);
       })
       .catch(() => changeFetch(!fetched));
@@ -30,9 +34,8 @@ function NewsFeed(userId) {
         return (
           <div className="news__item">
             <h3>{news.title}</h3>
-            <img src={news.urlToImage} alt="" />
-            <a href={news.url} target="_blank">
-              {news.content}
+            <a href={news.link} target="_blank">
+              {news.summary}
             </a>
             <p>{news.author}</p>
           </div>

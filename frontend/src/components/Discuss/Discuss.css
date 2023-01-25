@@ -1,0 +1,99 @@
+.discuss {
+  background-color: #0f111a;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discuss__messages {
+  border: 1px solid white;
+  max-width: 800px;
+  width: 500px;
+  border-radius: 10px;
+  height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 530px) {
+  .discuss__messages {
+    width: 90%;
+  }
+}
+
+.discuss__message {
+  background-color: #1a1c25;
+  width: 90%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.message__user {
+  color: rgb(182, 182, 182);
+}
+
+.message__content {
+  color: rgb(255, 254, 254);
+  font-size: 20px;
+}
+
+.msgSender {
+  display: flex;
+  flex-direction: column;
+}
+
+.msgSender__content {
+  resize: none;
+  width: 90%;
+  padding: 15px;
+  background-color: #181a1f;
+  color: white;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+
+.msgSender__user {
+  width: 100px;
+  margin-left: 10vw;
+  padding: 2px;
+  background-color: #181a1f;
+  color: white;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.msgSender__user:hover,
+.msgSender__content:hover {
+  background-color: #30343d;
+}
+
+.msgSender__user:focus,
+.msgSender__content:focus {
+  background-color: #22252c;
+}
+
+.msgSender__btn {
+  background: none;
+  border: none;
+}
+.msgSender__btn > * {
+  margin: 10px;
+  color: #717cb4;
+  font-size: 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.msgSender__btn > *:hover {
+  color: #4f567c;
+}

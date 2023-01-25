@@ -19,6 +19,7 @@ import TimeProject from "./components/TimeManagement/TimeProject";
 import TimeProjectItem from "./components/TimeManagement/TimeProjectItem";
 import StudyQuiz from "./components/Study/StudyQuiz";
 import NewsFeed from "./components/NewsFeed/NewsFeed";
+import Discuss from "./components/Discuss/Discuss";
 
 function App() {
   const [userId, setUserId] = useState(
@@ -77,6 +78,7 @@ function App() {
             element={<TimeProjectItem userId={userId} />}
           />
           <Route path="news" element={<NewsFeed userId={userId} />} />
+          <Route path="discuss" element={<Discuss userId={userId} />} />
         </Routes>
       </Router>
     </div>

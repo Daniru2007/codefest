@@ -24,6 +24,7 @@
 .news__item > a {
   color: #4b526d;
   text-decoration: none;
+  margin-top: 10px;
 }
 
 .news__item > p {
