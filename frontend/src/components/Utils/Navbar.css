@@ -54,9 +54,15 @@
   width: 40px;
   margin-top: 5px;
   margin-right: 15px;
-  background-color: rgba(0, 0, 255, 0);
+  background-color: #717cb480;
   border-radius: 100%;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__profile > * {
+  color: white;
+  font-size: 20px;
 }
 
 .menu-button {

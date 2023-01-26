@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { FaUserAlt } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar() {
@@ -46,7 +47,11 @@ function Navbar() {
         })}
       </div>
       <div className="navbar__right">
-        <div className="navbar__profile"></div>
+        <a href="http://localhost/3/profile.php">
+          <div className="navbar__profile">
+            <FaUserAlt />
+          </div>
+        </a>
 
         <div className="menu-button">
           <div
