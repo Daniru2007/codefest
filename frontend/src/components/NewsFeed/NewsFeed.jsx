@@ -9,6 +9,8 @@ import "./NewsFeed.css";
 function NewsFeed(userId) {
   const [data, setData] = useState([]);
   const [fetched, changeFetch] = useState(false);
+
+  // get the news when the component mounts
   useEffect(() => {
     fetch("https://api.newscatcherapi.com/v2/search?q=kids+educational", {
       method: "GET",
@@ -20,7 +22,6 @@ function NewsFeed(userId) {
         return jsonObj.json();
       })
       .then((tempData) => {
-        console.log(tempData);
         setData(tempData.articles);
       })
       .catch(() => changeFetch(!fetched));
@@ -30,6 +31,7 @@ function NewsFeed(userId) {
       <Link to={"../"}>
         <BsArrowLeftCircleFill className="back__button" />
       </Link>
+      {/* All the news */}
       {data?.map((news) => {
         return (
           <div className="news__item">

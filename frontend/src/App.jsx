@@ -33,6 +33,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes mode="absolute">
+          {/* Home section */}
           <Route
             path="/"
             element={<HomePage userId={userId} setUserId={() => {}} />}
@@ -49,6 +50,8 @@ function App() {
             path="/:id"
             element={<HomePage userId={userId} setUserId={setUserId} />}
           />
+
+          {/* Study Section */}
           <Route path="/study/" element={<Study userId={userId} />} />
           <Route
             path="/study/:grade"
@@ -67,7 +70,11 @@ function App() {
             element={<StudyQuiz userId={userId} />}
           />
           <Route path="/study" element={<Study userId={userId} />} />
+
+          {/* About Us */}
           <Route path="/aboutus" element={<AboutUs />} />
+
+          {/* Time Management */}
           <Route path="/time" element={<TimeManagement userId={userId} />} />
           <Route
             path="time/project"
@@ -77,7 +84,11 @@ function App() {
             path="time/project/:id"
             element={<TimeProjectItem userId={userId} />}
           />
+
+          {/* News Feed */}
           <Route path="news" element={<NewsFeed userId={userId} />} />
+
+          {/* Discussion */}
           <Route path="discuss" element={<Discuss userId={userId} />} />
         </Routes>
       </Router>

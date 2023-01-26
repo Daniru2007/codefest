@@ -9,6 +9,7 @@ import HomeDisplay from "./HomeDisplay";
 
 function HomePage({ userId, setUserId }) {
   const { id } = useParams();
+  // set up the userId
   useEffect(() => {
     if (id) {
       localStorage.setItem("userId", JSON.stringify(id));

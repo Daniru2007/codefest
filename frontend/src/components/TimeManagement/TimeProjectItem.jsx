@@ -39,6 +39,7 @@ function TimeProjectItem({ userId }) {
   const [currentSubjectId, setCurrentSubjectId] = useState(0);
   const [progress, setProgress] = useState([1, 1]);
 
+  // randomly generator colors for pie chart
   const randomColorGenerator = (amount) => {
     let colorsTemp = [];
     for (let i = 0; i < amount; i++) {
@@ -66,6 +67,7 @@ function TimeProjectItem({ userId }) {
     });
   };
 
+  // when subject value changes
   const onSubjectValueChange = (e) => {
     let parsedVal = parseInt(e.target.value ? e.target.value : "0");
     let id = parseInt(e.target.id);
@@ -133,10 +135,13 @@ function TimeProjectItem({ userId }) {
         console.log(error);
       });
   };
+
+  // reading the database before component mounts
   useLayoutEffect(() => {
     fetchJson();
   }, []);
 
+  // save all the data in the database
   const saveData = (e) => {
     fetch(`http://localhost:3000/users/${userId}`)
       .then((response) => {
@@ -174,6 +179,7 @@ function TimeProjectItem({ userId }) {
       });
   };
 
+  // saves the data within a 5 second time period
   useEffect(() => {
     const timeout = setInterval(() => {
       saveData();
@@ -181,6 +187,7 @@ function TimeProjectItem({ userId }) {
     return () => clearTimeout(timeout);
   }, [project]);
 
+  // setting chart data after reading the database
   useEffect(() => {
     let subjects = [...project["subjects"]];
     let sum = 0;
@@ -230,6 +237,7 @@ function TimeProjectItem({ userId }) {
   //   ChangeSubjectTime();
   // }, [project]);
 
+  // update the subject time when the timer changes
   const updateSubjectTime = (hours, minutes) => {
     let projectTemp = { ...project };
     projectTemp.subjects[currentSubjectId].time =
@@ -237,9 +245,11 @@ function TimeProjectItem({ userId }) {
     setProject(projectTemp);
   };
 
+  // changing the timer
   useEffect(() => {
     let hours = 0;
     let minutes = 0;
+    // checking the timer is not 0
     if (!time[0] && !time[1] && !time[2]) return;
     if (!stop) {
       let timeout = setInterval(() => {
@@ -259,6 +269,7 @@ function TimeProjectItem({ userId }) {
     }
   });
 
+  // starting the timer for each individual subject when clicks
   const startTimer = (key) => {
     let hours = Number(subjectTime[key].time);
     let minutes = (hours - Math.floor(hours)) * 60;
@@ -267,6 +278,7 @@ function TimeProjectItem({ userId }) {
     setCurrentSubjectId(key);
   };
 
+  // calculating the percentage when the project data changes
   useEffect(() => {
     let totalTime =
       project?.["days"] *

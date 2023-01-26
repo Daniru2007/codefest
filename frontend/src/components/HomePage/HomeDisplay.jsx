@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Tilty from "react-tilty";
 import "./HomeDisplay.css";
 
-function HomeDisplay({ setCursorOnLinks }) {
+// All the links and sections
+function HomeDisplay() {
   return (
     <div className="home-display">
       <div className="home-display__contents">
