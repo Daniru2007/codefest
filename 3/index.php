@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (isset($_SESSION['SESSION_EMAIL'])) {
-        header("Location: profile.php");
+        header("Location: welcome.php");
         die();
     }
     include 'config.php';
@@ -34,7 +34,7 @@
 
             if (empty($row['code'])) {
                 $_SESSION['SESSION_EMAIL'] = $email;
-                header("Location: profile.php");
+                header("Location: welcome.php");
             } else {
                 $msg = "<div class='alert alert-info'>First verify your account and try again.</div>";
             }

@@ -82,7 +82,7 @@ if (isset($_POST["submit"])) {
                     <label>retype your password </label>
                         <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" value="<?php echo $row['password']; ?>" required>
                     </div>
-                    <div class="inputBoxfile" style="  width: 100%; padding: 10px 0;font-size: 16px;  color: #fff;;margin-bottom: 30px; ">
+                    <div class="inputBoxfile" style="  width: 100%; padding: 10px 0;font-size: 16px; border-radius:100%; color: #fff;;margin-bottom: 30px; ">
                         <label for="photo">Photo</label>
                         <input type="file" accept="image/*" id="photo" name="photo" required>
                     </div>
