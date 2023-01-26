@@ -12,6 +12,7 @@
   /* background-color: rgb(70, 70, 70); */
   background-color: #090b10;
   height: max-content;
+  max-width: 870px;
   width: max-content;
   margin-top: -40px;
   border-radius: 10px;
@@ -28,6 +29,7 @@
 .contents {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .content {
@@ -73,6 +75,12 @@
   background-position: center;
   background-image: url(../../assets/news.jpg);
 }
+
+.discuss__link > .img__back {
+  background-position: center;
+  background-image: url(../../assets/discuss.png);
+}
+
 @media only screen and (max-width: 920px) {
   .contents {
     flex-direction: column;

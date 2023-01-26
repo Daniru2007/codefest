@@ -69,10 +69,38 @@ function HomeDisplay({ setCursorOnLinks }) {
                     fontSize: "24px",
                   }}
                 >
-                  News Feed
+                  Educational News Feed
                 </h2>
 
-                <p>Check out our news feed to know about the world</p>
+                <p>
+                  On Our Website you will be able to improve your general
+                  knowledge about the world
+                </p>
+              </div>
+            </Tilty>
+          </Link>
+          <Link
+            to={"/discuss"}
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <Tilty className="content time discuss__link">
+              <div className="img__back"></div>
+              <div className="description">
+                <h2
+                  style={{
+                    marginLeft: "0px",
+                    marginRight: "0px",
+                    width: "min-content",
+                    fontSize: "24px",
+                  }}
+                >
+                  Discuss Your Problems
+                </h2>
+
+                <p>
+                  Here you are not alone you can discuss your problems with
+                  others.
+                </p>
               </div>
             </Tilty>
           </Link>
