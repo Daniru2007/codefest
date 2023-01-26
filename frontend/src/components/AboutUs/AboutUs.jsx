@@ -34,12 +34,13 @@ function AboutUs() {
             <div className="person">
               <h3>Daniru Ayuka</h3>
               <h4>
-                She has seen this scene before. It had come to her in
+                Am 15 year old young developer and I have gone through
                 <br />
-                dreams many times before. She had to pinch herself to
+                bunch of programming languages and programming tool
                 <br />
-                make sure it wasn't a dream again. She has seen this <br />
-                scene before.
+                and I did a major work for this project as covering the
+                <br />
+                javascript section.
               </h4>
             </div>
           </div>
@@ -53,12 +54,11 @@ function AboutUs() {
             <div className="person">
               <h3>Muhammed Faahir</h3>
               <h4>
-                She has seen this scene before. It had come to her in
+                Am 15 years old and a member of Merge Conflicts and
                 <br />
-                dreams many times before. She had to pinch herself to
+                I have gone trough few programming languages and
                 <br />
-                make sure it wasn't a dream again. She has seen this <br />
-                scene before.
+                I covered some HTML and CSS parts in this project. <br />
               </h4>
             </div>
           </div>
@@ -70,14 +70,15 @@ function AboutUs() {
               class="avatar"
             ></img>
             <div className="person">
-              <h3>Nethnu bullathsinhala</h3>
+              <h3>Nethnu Bullathsinhala</h3>
               <h4>
-                She has seen this scene before. It had come to her in
+                Am 15 years old and another member of Merge Conflicts team
                 <br />
-                dreams many times before. She had to pinch herself to
+                and I have gone through some backend stuffs and game
                 <br />
-                make sure it wasn't a dream again. She has seen this <br />
-                scene before.
+                development. I did almost everything on backend regarding this
+                project.
+                <br />
               </h4>
             </div>
           </div>
@@ -91,12 +92,12 @@ function AboutUs() {
             <div className="person">
               <h3>Tiran Pankaja</h3>
               <h4>
-                She is in this scene ands It had come to her in
+                Am 15 years old and another member of Merge Conflicts team
                 <br />
-                dreams many times before. She had to pinch herself to
+                I have gone through few programming languages and
+                <br />I took a part in this project as a UI (User Interface)
+                designer.
                 <br />
-                make sure it wasn't a dream again. She has seen this <br />
-                scene before.
               </h4>
             </div>
           </div>
@@ -110,12 +111,12 @@ function AboutUs() {
             <div className="person">
               <h3>Senuja Illangakoon</h3>
               <h4>
-                She has seen this scene before. It had come to her in
+                Am 15 years old too As well as a member of Merge Conflicts
                 <br />
-                dreams many times before. She had to pinch herself to
+                team. I have a knowledge on programming and never tried on,
                 <br />
-                make sure it wasn't a dream again. She has seen this <br />
-                scene before.
+                So I did some deisigning and giving ideas to team members as
+                <br />
               </h4>
             </div>
           </div>
@@ -126,31 +127,21 @@ function AboutUs() {
         <div className="explanation">
           <h3 className="falcon">About Us</h3>
           <p>
-            Generating random paragraphs can be an excellent way for writers to
-            get their creative flow going at the beginning of the day. The
-            writer has no idea what topic the random paragraph will be about
-            when it appears. This forces the writer to use creativity to
-            complete one of three common writing challenges. The writer can use
-            the paragraph as the first one of a short story and build upon it. A
-            second option is to use the random paragraph somewhere in a short
-            story they create. The third option is to have the random paragraph
-            be the ending paragraph in a short story. No matter which of these
-            challenges is undertaken, the writer is forced to use creativity to
-            incorporate the paragraph into their writing. Generating random
-            paragraphs can be an excellent way for writers to get their creative
-            flow going at the beginning of the day. The writer has no idea what
-            topic the random paragraph will be about when it appears.
+            As the members of the team Merge conflicts, our mission is to create
+            innovative software solutions that simplify everyday tasks and
+            improve productivity. Our team is made up of experienced developers
+            who are passionate about using technology to make a difference.
           </p>
         </div>
         <div className="email">
           <h5>Contact Us :</h5>
           <p>
-            Email : <a href="#email"> username@gmail.com </a>
+            Email : <a href="#email"> mergeconflict@gmail.com </a>
           </p>
 
           <div className="contact">
             <p>
-              Contact No : <a href="#contact"> +94 74xxxxxxx</a>
+              Contact No : <a href="#contact"> +94 712345678</a>
             </p>
           </div>
         </div>
