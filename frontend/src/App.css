@@ -5,6 +5,7 @@
   font-family: "Varela Round";
   margin: 0px;
   padding: 0px;
+  scroll-behavior: smooth;
 }
 
 *::selection {

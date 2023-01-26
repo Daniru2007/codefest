@@ -21,10 +21,10 @@ function StudySubject({ userId }) {
           Take your subject skills to the next level. Improve greatly by taking
           advantage of our online learning platform.
         </p>
-        <Link className="link">
+        <a href="#lessons" className="link">
           Take me through{" "}
           <BsFillArrowRightCircleFill style={{ marginLeft: "5px" }} />
-        </Link>
+        </a>
       </div>
       <div className="study__badge">
         <div className="study__badge__item">
@@ -73,7 +73,7 @@ function StudySubject({ userId }) {
           <h3>All subjects are available</h3>
         </div>
       </div>
-      <div className="study__subject__content">
+      <div className="study__subject__content" id="lessons">
         {content[grade][subject]["lessons"].map((lesson, ind) => {
           return (
             <Link
