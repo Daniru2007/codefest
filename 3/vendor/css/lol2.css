@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+
+#user-box input[type="password"],
+#user-box input[type="text"],
+
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+body,
+h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size:30px;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 5rem;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.btn {
+  width: 280px;
+  background-color: #00fffb;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: .3rem;
+  /* display: block; */
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn.transparent:hover {
+  background-color: rgb(0, 0, 0);
+  color: #3700fe;
+}
+
+.btn:hover {
+  background-color: #4d84e2;
+}
+
+
+
+.inputBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(255, 249, 249);
+  margin-bottom: 30px;
+  border: 3px solid rgb(155, 146, 146);
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+}
+.right {
+ right:1000px;
+
+}
+
+a{
+  margin: 0 0 30px;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 10px 0;
+  top: 40vw;
+  text-decoration: indianred;
+}
+
+.inputBoxfile {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(255, 249, 249);
+  margin-bottom: 30px;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  
+  font-size:10px;
+}
+
+.inputBoxbecible input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: rgb(85, 76, 76);
+  margin-bottom: 30px;
+  border: 3px solid rgb(155, 146, 146);
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+}
+
+.boxer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+.inputBox label {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
