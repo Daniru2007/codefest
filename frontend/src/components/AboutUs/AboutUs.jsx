@@ -4,34 +4,16 @@ function AboutUs() {
   return (
     <div className="about_us">
       <section className="pg_1">
-        {/* <nav className="navbar">
-        <div>
-          <div className="logo"></div>
-        </div>
-
-        <div className="navbar__links">
-          <a className="navbar__links__item" href="/home">Home</a>
-          <a className="navbar__links__item" href="/study">Study</Study></a>
-          <a className="navbar__links__item" href="/time">Time Management</a>
-          <a className="navbar__links__item" href="/aboutus">About Us</a>
-        </div>
-
-        <div className="navbar__right">
-        <div className="navbar__profile"></div>
-        </div>
-      </nav> */}
-
         <div className="container">
-          <img src="/src/assets/about_img/bg5.jpg"></img>
+          <div className="container_back"></div>
           <div class="about">ABOUT US</div>
 
           <div className="para_1">
-            <h1>We Are Multi Cellular Organisms!</h1>
+            <h1>We Are From Asoka Vidyalaya !</h1>
             <p>
-              A random paragraph can also be an excellent way for a writer to
-              tackle writers' block. Writing block can often happen due to being
-              stuck with a current project that the writer is trying to
-              complete.
+              We are young developers from colombo Asoka Vidyalaya. Our team is
+              made up of experienced developers who are passionate about using
+              technology to make a difference.
             </p>
           </div>
         </div>
@@ -49,32 +31,36 @@ function AboutUs() {
               alt="Avatar"
               class="avatar"
             ></img>
-            <h3>Daniru Ayuka</h3>
-            <h4>
-              She has seen this scene before. It had come to her in
-              <br />
-              dreams many times before. She had to pinch herself to
-              <br />
-              make sure it wasn't a dream again. She has seen this <br />
-              scene before.
-            </h4>
+            <div className="person">
+              <h3>Daniru Ayuka</h3>
+              <h4>
+                She has seen this scene before. It had come to her in
+                <br />
+                dreams many times before. She had to pinch herself to
+                <br />
+                make sure it wasn't a dream again. She has seen this <br />
+                scene before.
+              </h4>
+            </div>
           </div>
 
-          <div className="avatar1">
+          <div className="avatar">
             <img
               src="/src/assets/about_img/avatar2.png"
               alt="Avatar"
               class="avatar"
             ></img>
-            <h3>Muhammed Faahir</h3>
-            <h4>
-              She has seen this scene before. It had come to her in
-              <br />
-              dreams many times before. She had to pinch herself to
-              <br />
-              make sure it wasn't a dream again. She has seen this <br />
-              scene before.
-            </h4>
+            <div className="person">
+              <h3>Muhammed Faahir</h3>
+              <h4>
+                She has seen this scene before. It had come to her in
+                <br />
+                dreams many times before. She had to pinch herself to
+                <br />
+                make sure it wasn't a dream again. She has seen this <br />
+                scene before.
+              </h4>
+            </div>
           </div>
 
           <div className="avatar">
@@ -83,32 +69,36 @@ function AboutUs() {
               alt="Avatar"
               class="avatar"
             ></img>
-            <h3>Nethnu bullathsinhala</h3>
-            <h4>
-              She has seen this scene before. It had come to her in
-              <br />
-              dreams many times before. She had to pinch herself to
-              <br />
-              make sure it wasn't a dream again. She has seen this <br />
-              scene before.
-            </h4>
+            <div className="person">
+              <h3>Nethnu bullathsinhala</h3>
+              <h4>
+                She has seen this scene before. It had come to her in
+                <br />
+                dreams many times before. She had to pinch herself to
+                <br />
+                make sure it wasn't a dream again. She has seen this <br />
+                scene before.
+              </h4>
+            </div>
           </div>
 
-          <div className="avatar1">
+          <div className="avatar">
             <img
               src="/src/assets/about_img/avatar4.png"
               alt="Avatar"
               class="avatar"
             ></img>
-            <h3>Tiran Pankaja</h3>
-            <h4>
-              She is Gay in this scene ands It had come to her in
-              <br />
-              dreams many times before. She had to pinch herself to
-              <br />
-              make sure it wasn't a dream again. She has seen this <br />
-              scene before.
-            </h4>
+            <div className="person">
+              <h3>Tiran Pankaja</h3>
+              <h4>
+                She is in this scene ands It had come to her in
+                <br />
+                dreams many times before. She had to pinch herself to
+                <br />
+                make sure it wasn't a dream again. She has seen this <br />
+                scene before.
+              </h4>
+            </div>
           </div>
 
           <div className="avatar">
@@ -117,15 +107,17 @@ function AboutUs() {
               alt="Avatar"
               class="avatar"
             ></img>
-            <h3>Senuja Illangakoon</h3>
-            <h4>
-              She has seen this scene before. It had come to her in
-              <br />
-              dreams many times before. She had to pinch herself to
-              <br />
-              make sure it wasn't a dream again. She has seen this <br />
-              scene before.
-            </h4>
+            <div className="person">
+              <h3>Senuja Illangakoon</h3>
+              <h4>
+                She has seen this scene before. It had come to her in
+                <br />
+                dreams many times before. She had to pinch herself to
+                <br />
+                make sure it wasn't a dream again. She has seen this <br />
+                scene before.
+              </h4>
+            </div>
           </div>
         </div>
       </section>
