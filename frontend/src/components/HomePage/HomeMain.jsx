@@ -7,6 +7,7 @@ import "./HomeMain.css";
 function HomeMain() {
   return (
     <div className="home-main">
+      {/* Typing Animation */}
       <Typing
         texts={["Best E-Learning Site", "Study Efficiently", "Join Us"]}
       />

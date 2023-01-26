@@ -21,10 +21,10 @@ function StudyLesson({ userId }) {
           Take your subject skills to the next level. Improve greatly by taking
           advantage of our online learning platform.
         </p>
-        <Link className="link">
+        <a href="#content" className="link">
           Take me through{" "}
           <BsFillArrowRightCircleFill style={{ marginLeft: "5px" }} />
-        </Link>
+        </a>
       </div>
       <div className="study__badge">
         <div className="study__badge__item">
@@ -74,7 +74,7 @@ function StudyLesson({ userId }) {
         </div>
       </div>
 
-      <center>
+      <center id="content">
         <iframe
           className="yt-vid"
           src={`${content[grade][subject][lesson]["ytEmbed"]}`}

@@ -6,6 +6,7 @@ import Navbar from "../Utils/Navbar";
 import "./StudyGrade.css";
 
 function StudyGrade({ userId }) {
+  // links for all the subjects
   const links = [
     { science: "science" },
     { maths: "maths" },
@@ -33,10 +34,10 @@ function StudyGrade({ userId }) {
           Take your subject skills to the next level. Improve greatly by taking
           advantage of our online learning platform.
         </p>
-        <Link className="link">
+        <a href="#subjects" className="link">
           Take me through{" "}
           <BsFillArrowRightCircleFill style={{ marginLeft: "5px" }} />
-        </Link>
+        </a>
       </div>
       <div className="study__badge">
         <div className="study__badge__item">
@@ -85,7 +86,8 @@ function StudyGrade({ userId }) {
           <h3>All subjects are available</h3>
         </div>
       </div>
-      <div className="subject__choose">
+      {/* All the subjects */}
+      <div className="subject__choose" id="subjects">
         {links.map((link) => {
           const [key, val] = Object.entries(link)[0];
           return (

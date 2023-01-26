@@ -15,11 +15,12 @@ function Study({ userId }) {
           Take your subject skills to the next level. Improve greatly by taking
           advantage of our online learning platform.
         </p>
-        <Link className="link">
+        <a href="#grades" className="link">
           Take me through{" "}
           <BsFillArrowRightCircleFill style={{ marginLeft: "5px" }} />
-        </Link>
+        </a>
       </div>
+      {/* Study Badges */}
       <div className="study__badge">
         <div className="study__badge__item">
           <svg
@@ -67,7 +68,8 @@ function Study({ userId }) {
           <h3>All subjects are available</h3>
         </div>
       </div>
-      <div className="study__grades">
+      {/* Links and grades */}
+      <div className="study__grades" id="grades">
         <Link to={"./6"} className="study__grades__item six">
           <h3>Grade</h3>
           <h1>6</h1>

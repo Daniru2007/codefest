@@ -17,6 +17,7 @@ function TimeProject({ userId }) {
     { name: "subject", val: 0, time: 0 },
   ]);
 
+  // function to act when the subject name changes
   const onSubjectNameChange = (e) => {
     let id = parseInt(e.target.id);
     const subjects = projectInfo["subjects"];
@@ -27,6 +28,7 @@ function TimeProject({ userId }) {
     });
   };
 
+  // function for project name change
   const onNameChange = (e) => {
     setProjectInfo({
       ...projectInfo,
@@ -34,6 +36,7 @@ function TimeProject({ userId }) {
     });
   };
 
+  // adding new subjects
   const addSubjects = (e) => {
     let subjects = projectInfo["subjects"];
     subjects.push({ name: "new subject", val: 0 });
@@ -43,6 +46,7 @@ function TimeProject({ userId }) {
     });
   };
 
+  // save data to the database
   const saveData = (e) => {
     fetch(`http://localhost:3000/users/${userId}`)
       .then((response) => {
@@ -80,6 +84,7 @@ function TimeProject({ userId }) {
       });
   };
 
+  // calls when subject value change
   const onSubjectValueChange = (e) => {
     let parsedVal = parseInt(e.target.value ? e.target.value : "0");
     let id = parseInt(e.target.id);
@@ -91,7 +96,7 @@ function TimeProject({ userId }) {
     });
   };
 
-  // this calls when some information is changed
+  // this calls when time is changed
   const onInfoChange = (e) => {
     let days = projectInfo["days"];
     let hours = projectInfo["time"][0];
@@ -116,6 +121,7 @@ function TimeProject({ userId }) {
     });
   };
 
+  // adding specific time for each subject
   const ChangeSubjectTime = () => {
     let subjects = [...projectInfo["subjects"]];
     let sum = 0;
@@ -142,6 +148,7 @@ function TimeProject({ userId }) {
     setSubjectTime(subjectTimeTemp);
   };
 
+  // change the time for each subject if the project information changes
   useEffect(() => {
     ChangeSubjectTime();
   }, [projectInfo]);

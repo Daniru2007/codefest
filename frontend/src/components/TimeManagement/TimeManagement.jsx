@@ -24,9 +24,12 @@ function TimeManagement({ userId }) {
         console.log(error);
       });
   };
+  // reads the database before component mounts
   useLayoutEffect(() => {
     fetchJson();
   }, []);
+
+  // continuously read the database
   useEffect(() => {
     const timeout = setInterval(() => {
       fetchJson();
@@ -34,6 +37,7 @@ function TimeManagement({ userId }) {
     return () => clearInterval(timeout);
   }, [data, changed]);
 
+  // delete the project
   const deleteProject = (ind) => {
     let tempData = { ...data };
     let projects = tempData["projects"];

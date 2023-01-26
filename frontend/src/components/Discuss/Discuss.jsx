@@ -18,9 +18,12 @@ import { BsArrowLeftCircleFill } from "react-icons/bs";
 import "./Discuss.css";
 
 function Discuss() {
+  // Store all the messages
   const [data, setData] = useState([]);
   const [userName, setUserName] = useState("");
   const [message, setMessage] = useState("");
+
+  // Get all the messages
   const getMessages = async () => {
     onSnapshot(
       query(collection(db, "discussion"), orderBy("timestamp", "desc")),
@@ -34,6 +37,8 @@ function Discuss() {
       }
     );
   };
+
+  // Add messages to firebase
   const addMessages = async (e) => {
     e.preventDefault();
     if (message === "") return;
@@ -44,6 +49,8 @@ function Discuss() {
     });
     setMessage("");
   };
+
+  // get all the messages when the component mounted
   useEffect(() => {
     getMessages();
   }, []);
@@ -53,6 +60,7 @@ function Discuss() {
       <Link to={"../"}>
         <BsArrowLeftCircleFill className="back__button" />
       </Link>
+      {/* All the messages */}
       <div className="discuss__messages">
         {data.map((msg, ind) => {
           return (
@@ -63,6 +71,8 @@ function Discuss() {
           );
         })}
       </div>
+
+      {/* Message sender */}
       <form className="msgSender">
         <input
           className="msgSender__user"
